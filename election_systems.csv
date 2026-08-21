@@ -1,0 +1,210 @@
+county,iso2,presidential,parliament,fh,population,emoji,federal,upper_house
+Afghanistan,AF,TRS,SNTV,Not Free,28400000,🇦🇫,FALSE,TRUE
+Albania,AL,Not applicable,List PR,Partly Free,3639453,🇦🇱,FALSE,FALSE
+Algeria,DZ,TRS,List PR,Not Free,34178188,🇩🇿,FALSE,TRUE
+Andorra,AD,Not applicable,Parallel,Free,81938,🇦🇩,FALSE,FALSE
+Angola,AO,Other,List PR,Not Free,12799293,🇦🇴,FALSE,FALSE
+Antigua and Barbuda,AG,Not applicable,FPTP,Free,93772,🇦🇬,FALSE,TRUE
+Argentina,AR,TRS,List PR,Free,40913584,🇦🇷,TRUE,TRUE
+Armenia,AM,Not applicable,List PR,Partly Free,2967004,🇦🇲,FALSE,FALSE
+Australia,AU,Not applicable,AV,Free,21262641,🇦🇺,TRUE,TRUE
+Austria,AT,TRS,List PR,Free,8210281,🇦🇹,TRUE,TRUE
+Azerbaijan,AZ,FPTP,FPTP,Not Free,8238672,🇦🇿,FALSE,FALSE
+Bahamas,BS,Not applicable,FPTP,Free,401283,🇧🇸,FALSE,TRUE
+Bahrain,BH,Not applicable,TRS,Not Free,1589000,🇧🇭,FALSE,TRUE
+Bangladesh,BD,Not applicable,FPTP,Partly Free,156050883,🇧🇩,FALSE,FALSE
+Barbados,BB,Not applicable,FPTP,Free,282467,🇧🇧,FALSE,TRUE
+Belarus,BY,TRS,FPTP,Not Free,9648533,🇧🇾,FALSE,TRUE
+Belgium,BE,Not applicable,List PR,Free,10414336,🇧🇪,TRUE,TRUE
+Belize,BZ,Not applicable,FPTP,Free,307899,🇧🇿,FALSE,TRUE
+Benin,BJ,TRS,List PR,Partly Free,8791832,🇧🇯,FALSE,FALSE
+Bhutan,BT,Not applicable,FPTP,Free,691141,🇧🇹,FALSE,TRUE
+Bolivia,BO,TRS,MMP,Partly Free,9775246,🇧🇴,FALSE,TRUE
+Bosnia and Herzegovina,BA,FPTP,List PR,Partly Free,4613414,🇧🇦,TRUE,TRUE
+Botswana,BW,TRS,FPTP,Free,1990876,🇧🇼,FALSE,FALSE
+Brazil,BR,TRS,List PR,Free,198739269,🇧🇷,TRUE,TRUE
+Brunei Darussalam,BN,Not applicable,No direct elections,Not Free,388190,🇧🇳,FALSE,FALSE
+Bulgaria,BG,TRS,List PR,Free,7204687,🇧🇬,FALSE,FALSE
+Burkina Faso,BF,TRS,List PR,Not Free,15746232,🇧🇫,FALSE,FALSE
+Burundi,BI,TRS,List PR,Not Free,8988091,🇧🇮,FALSE,TRUE
+Cabo Verde,CV,TRS,List PR,Free,524877,🇨🇻,FALSE,FALSE
+Cambodia,KH,Not applicable,List PR,Not Free,14494293,🇰🇭,FALSE,TRUE
+Cameroon,CM,FPTP,"#FPTP
+#PBV
+#List PR",Not Free,18879301,🇨🇲,FALSE,TRUE
+Canada,CA,Not applicable,FPTP,Free,33487208,🇨🇦,TRUE,TRUE
+Central African Republic,CF,TRS,TRS,Not Free,4511488,🇨🇫,FALSE,FALSE
+Chad,TD,TRS,"#TRS
+#PBV
+#List PR",Not Free,10329208,🇹🇩,FALSE,TRUE
+Chile,CL,TRS,List PR,Free,16601707,🇨🇱,FALSE,TRUE
+China,CN,Not applicable,No direct elections,Not Free,1338612970,🇨🇳,FALSE,FALSE
+Colombia,CO,TRS,List PR,Free,45644023,🇨🇴,FALSE,TRUE
+Comoros,KM,TRS,TRS,Partly Free,866628,🇰🇲,FALSE,FALSE
+"Congo, Democratic Republic of",CD,FPTP,"#FPTP
+#List PR",Not Free,68692542,🇨🇩,FALSE,TRUE
+Costa Rica,CR,TRS,List PR,Free,4253877,🇨🇷,FALSE,FALSE
+Côte d'Ivoire,CI,TRS,"#FPTP
+#PBV",Partly Free,20617068,🇨🇮,FALSE,TRUE
+Croatia,HR,TRS,List PR,Free,4489409,🇭🇷,FALSE,FALSE
+Cuba,CU,Not applicable,TRS,Not Free,11451652,🇨🇺,FALSE,FALSE
+Cyprus,CY,TRS,List PR,Free,531640,🇨🇾,FALSE,FALSE
+Cyprus (North),CP,TRS,List PR,Free,830000,🇨🇵,FALSE,FALSE
+Czechia,CZ,TRS,List PR,Free,10211904,🇨🇿,FALSE,TRUE
+Denmark,DK,Not applicable,List PR,Free,5500510,🇩🇰,FALSE,FALSE
+Djibouti,DJ,TRS,Parallel,Not Free,516055,🇩🇯,FALSE,FALSE
+Dominica,DM,Not applicable,FPTP,Free,66205,🇩🇲,FALSE,FALSE
+Dominican Republic,DO,TRS,List PR,Partly Free,9650054,🇩🇴,FALSE,TRUE
+Ecuador,EC,TRS,List PR,Partly Free,14573101,🇪🇨,FALSE,FALSE
+Egypt,EG,TRS,"#TRS
+#PBV",Not Free,83082869,🇪🇬,FALSE,TRUE
+El Salvador,SV,TRS,List PR,Partly Free,7185218,🇸🇻,FALSE,FALSE
+Equatorial Guinea,GQ,FPTP,List PR,Not Free,650702,🇬🇶,FALSE,TRUE
+Eritrea,ER,Not applicable,No direct elections,Not Free,5647168,🇪🇷,FALSE,FALSE
+Estonia,EE,Not applicable,List PR,Free,1299371,🇪🇪,FALSE,FALSE
+Eswatini,SZ,Not applicable,FPTP,Not Free,1123913,🇸🇿,FALSE,TRUE
+Ethiopia,ET,Not applicable,FPTP,Not Free,85237338,🇪🇹,TRUE,TRUE
+Falkland Islands (Malvinas),FK,Not applicable,BV,Not covered,3140,🇫🇰,FALSE,FALSE
+Fiji,FJ,Not applicable,List PR,Partly Free,944720,🇫🇯,FALSE,FALSE
+Finland,FI,TRS,List PR,Free,5250275,🇫🇮,FALSE,FALSE
+France,FR,TRS,TRS,Free,64057792,🇫🇷,FALSE,TRUE
+Gabon,GA,TRS,TRS,Not Free,1514993,🇬🇦,FALSE,TRUE
+Georgia,GE,Not applicable,List PR,Partly Free,4615807,🇬🇪,FALSE,FALSE
+Germany,DE,Not applicable,MMP,Free,82329758,🇩🇪,TRUE,TRUE
+Ghana,GH,TRS,FPTP,Free,23832495,🇬🇭,FALSE,FALSE
+Greece,GR,Not applicable,List PR,Free,10737428,🇬🇷,FALSE,FALSE
+Grenada,GD,Not applicable,FPTP,Free,117207,🇬🇩,FALSE,TRUE
+Guatemala,GT,TRS,List PR,Partly Free,13276517,🇬🇹,FALSE,FALSE
+Guinea,GN,TRS,Parallel,Not Free,10057975,🇬🇳,FALSE,FALSE
+Guinea-Bissau,GW,TRS,List PR,Partly Free,1533964,🇬🇼,FALSE,FALSE
+Guyana,GY,Not applicable,List PR,Free,772298,🇬🇾,FALSE,FALSE
+Haiti,HT,TRS,TRS,Not Free,9035536,🇭🇹,FALSE,TRUE
+Honduras,HN,FPTP,List PR,Partly Free,7792854,🇭🇳,FALSE,FALSE
+Hungary,HU,Not applicable,MMP,Partly Free,9905596,🇭🇺,FALSE,FALSE
+Iceland,IS,FPTP,List PR,Free,306694,🇮🇸,FALSE,FALSE
+India,IN,Not applicable,FPTP,Partly Free,1166079220,🇮🇳,TRUE,TRUE
+Indonesia,ID,TRS,List PR,Partly Free,240271522,🇮🇩,FALSE,FALSE
+"Iran, Islamic Republic of",IR,TRS,TRS,Not Free,66429284,🇮🇷,FALSE,FALSE
+Iraq,IQ,Not applicable,SNTV,Not Free,31129225,🇮🇶,TRUE,FALSE
+Ireland,IE,STV,STV,Free,4203200,🇮🇪,FALSE,TRUE
+Israel,IL,Not applicable,List PR,Free,7233701,🇮🇱,FALSE,FALSE
+Italy,IT,Not applicable,Parallel,Free,58126212,🇮🇹,FALSE,TRUE
+Jamaica,JM,Not applicable,FPTP,Free,2825928,🇯🇲,FALSE,TRUE
+Japan,JP,Not applicable,Parallel,Free,127078679,🇯🇵,FALSE,TRUE
+Jordan,JO,Not applicable,List PR,Partly Free,6342948,🇯🇴,FALSE,TRUE
+Kazakhstan,KZ,TRS,Parallel,Not Free,15399437,🇰🇿,FALSE,TRUE
+Kenya,KE,TRS,FPTP,Partly Free,39002772,🇰🇪,FALSE,TRUE
+Kiribati,KI,FPTP,TRS,Free,134518,🇰🇮,FALSE,FALSE
+"Korea, Dem. People's Republic of",KP,Not applicable,TRS,Not Free,22665345,🇰🇵,FALSE,FALSE
+"Korea, Republic of",KR,FPTP,MMP,Free,48508972,🇰🇷,FALSE,FALSE
+Kosovo,XK,Not applicable,List PR,Partly Free,1804838,🇽🇰,FALSE,FALSE
+Kuwait,KW,Not applicable,SNTV,Not Free,2691158,🇰🇼,FALSE,FALSE
+Kyrgyzstan,KG,TRS,Parallel,Not Free,5431747,🇰🇬,FALSE,FALSE
+Lao People's Dem. Republic,LA,Not applicable,BV,Not Free,6834942,🇱🇦,FALSE,FALSE
+Latvia,LV,Not applicable,List PR,Free,2231503,🇱🇻,FALSE,FALSE
+Lebanon,LB,Not applicable,List PR,Partly Free,4017095,🇱🇧,FALSE,FALSE
+Lesotho,LS,Not applicable,MMP,Free,2130819,🇱🇸,FALSE,TRUE
+Liberia,LR,TRS,FPTP,Partly Free,3441790,🇱🇷,FALSE,TRUE
+Libya,LY,In transition,Parallel,Not Free,6310434,🇱🇾,FALSE,FALSE
+Liechtenstein,LI,Not applicable,List PR,Free,40197,🇱🇮,FALSE,FALSE
+Lithuania,LT,TRS,Parallel,Free,3555179,🇱🇹,FALSE,FALSE
+Luxembourg,LU,Not applicable,List PR,Free,491775,🇱🇺,FALSE,FALSE
+Madagascar,MG,TRS,"#FPTP
+#List PR",Partly Free,20653556,🇲🇬,FALSE,TRUE
+Malawi,MW,TRS,FPTP,Partly Free,14268711,🇲🇼,FALSE,FALSE
+Malaysia,MY,Not applicable,FPTP,Partly Free,25715819,🇲🇾,TRUE,TRUE
+Maldives,MV,TRS,FPTP,Partly Free,527799,🇲🇻,FALSE,FALSE
+Mali,ML,TRS,TRS,Not Free,12666987,🇲🇱,FALSE,FALSE
+Malta,MT,Not applicable,STV,Free,574346,🇲🇹,FALSE,FALSE
+Marshall Islands,MH,Not applicable,"#BV
+#FPTP",Free,37548,🇲🇭,FALSE,FALSE
+Mauritania,MR,TRS,Parallel,Partly Free,3129486,🇲🇷,FALSE,FALSE
+Mauritius,MU,Not applicable,BV,Free,1260000,🇲🇺,FALSE,FALSE
+Mexico,MX,FPTP,MMP,Partly Free,111211789,🇲🇽,TRUE,TRUE
+"Micronesia, Federated States of",FM,Not applicable,FPTP,Free,113160,🇫🇲,TRUE,FALSE
+"Moldova, Republic of",MD,TRS,List PR,Partly Free,4320748,🇲🇩,FALSE,FALSE
+Monaco,MC,Not applicable,Parallel,Free,38631,🇲🇨,FALSE,FALSE
+Mongolia,MN,TRS,Parallel,Free,3041142,🇲🇳,FALSE,FALSE
+Montenegro,ME,TRS,List PR,Partly Free,672180,🇲🇪,FALSE,FALSE
+Morocco,MA,Not applicable,List PR,Partly Free,34859364,🇲🇦,FALSE,TRUE
+Mozambique,MZ,TRS,List PR,Partly Free,21669278,🇲🇿,FALSE,FALSE
+Myanmar,MM,Not applicable,FPTP,Not Free,48137741,🇲🇲,FALSE,TRUE
+Namibia,NA,TRS,List PR,Free,2108665,🇳🇦,FALSE,TRUE
+Nauru,NR,Not applicable,Modified BC,Free,11947,🇳🇷,FALSE,FALSE
+Nepal,NP,Not applicable,Parallel,Partly Free,28563377,🇳🇵,TRUE,TRUE
+Netherlands,NL,Not applicable,List PR,Free,16715999,🇳🇱,FALSE,TRUE
+New Zealand,NZ,Not applicable,MMP,Free,4213418,🇳🇿,FALSE,FALSE
+Nicaragua,NI,FPTP,List PR,Not Free,5891199,🇳🇮,FALSE,FALSE
+Niger,NE,TRS,List PR,Not Free,15306252,🇳🇪,FALSE,FALSE
+Nigeria,NG,TRS,FPTP,Partly Free,149229090,🇳🇬,TRUE,TRUE
+"North Macedonia, Republic of",MK,TRS,List PR,Partly Free,2066718,🇲🇰,FALSE,FALSE
+Norway,NO,Not applicable,List PR,Free,4676305,🇳🇴,FALSE,FALSE
+Oman,OM,Not applicable,"#BV
+#FPTP",Not Free,3418085,🇴🇲,FALSE,TRUE
+Pakistan,PK,Not applicable,Parallel,Partly Free,176242949,🇵🇰,TRUE,TRUE
+Palau,PW,TRS,FPTP,Free,17695,🇵🇼,FALSE,TRUE
+Panama,PA,FPTP,Parallel,Free,3360474,🇵🇦,FALSE,FALSE
+Papua New Guinea,PG,Not applicable,AV,Partly Free,6057263,🇵🇬,FALSE,FALSE
+Paraguay,PY,FPTP,List PR,Partly Free,6995655,🇵🇾,FALSE,TRUE
+Peru,PE,TRS,List PR,Partly Free,29546963,🇵🇪,FALSE,FALSE
+Philippines,PH,FPTP,Parallel,Partly Free,97976603,🇵🇭,FALSE,TRUE
+Poland,PL,TRS,List PR,Free,38482919,🇵🇱,FALSE,TRUE
+Portugal,PT,TRS,List PR,Free,10707924,🇵🇹,FALSE,FALSE
+Qatar,QA,Not applicable,FPTP,Not Free,833285,🇶🇦,FALSE,FALSE
+Republic of The Congo (Brazzaville),CG,TRS,TRS,Not Free,4012809,🇨🇬,FALSE,TRUE
+Romania,RO,TRS,List PR,Free,22215421,🇷🇴,FALSE,TRUE
+Russian Federation,RU,TRS,Parallel,Not Free,140041247,🇷🇺,TRUE,TRUE
+Rwanda,RW,FPTP,List PR,Not Free,10473282,🇷🇼,FALSE,TRUE
+Saint Kitts and Nevis,KN,Not applicable,FPTP,Free,46843,🇰🇳,TRUE,FALSE
+Saint Lucia,LC,Not applicable,FPTP,Free,179744,🇱🇨,FALSE,TRUE
+Saint Vincent and the Grenadines,VC,Not applicable,FPTP,Free,100616,🇻🇨,FALSE,FALSE
+Samoa,WS,Not applicable,FPTP,Free,218019,🇼🇸,FALSE,FALSE
+San Marino,SM,Not applicable,List PR,Free,33977,🇸🇲,FALSE,FALSE
+São Tomé and Príncipe,ST,TRS,List PR,Free,235536,🇸🇹,FALSE,FALSE
+Saudi Arabia,SA,Not applicable,No direct elections,Not Free,28686633,🇸🇦,FALSE,FALSE
+Senegal,SN,TRS,Parallel,Free,13711597,🇸🇳,FALSE,FALSE
+Serbia,RS,TRS,List PR,Partly Free,7379339,🇷🇸,FALSE,FALSE
+Seychelles,SC,TRS,Parallel,Free,121354,🇸🇨,FALSE,FALSE
+Sierra Leone,SL,TRS,FPTP,Partly Free,6440053,🇸🇱,FALSE,FALSE
+Singapore,SG,FPTP,"#PBV
+#FPTP",Partly Free,6000,🇸🇬,FALSE,FALSE
+Slovakia,SK,TRS,List PR,Free,5463046,🇸🇰,FALSE,FALSE
+Slovenia,SI,TRS,List PR,Free,2005692,🇸🇮,FALSE,TRUE
+Solomon Islands,SB,Not applicable,FPTP,Free,819198,🇸🇧,FALSE,FALSE
+Somalia,SO,Not applicable,No direct elections,Not Free,9832017,🇸🇴,TRUE,TRUE
+South Africa,ZA,Not applicable,List PR,Free,49052489,🇿🇦,FALSE,TRUE
+South Sudan,SS,TRS,In transition,Not Free,10625176,🇸🇸,TRUE,TRUE
+Spain,ES,Not applicable,List PR,Free,40525002,🇪🇸,FALSE,TRUE
+Sri Lanka,LK,SV,List PR,Partly Free,21324791,🇱🇰,FALSE,FALSE
+State of Palestine,PS,FPTP,BV,Not covered,5289000,🇵🇸,FALSE,FALSE
+Sudan,SD,TRS,FPTP,Not Free,25946220,🇸🇩,TRUE,TRUE
+Suriname,SR,Not applicable,List PR,Free,481267,🇸🇷,FALSE,FALSE
+Sweden,SE,Not applicable,List PR,Free,9059651,🇸🇪,FALSE,FALSE
+Switzerland,CH,Not applicable,List PR,Free,7604467,🇨🇭,TRUE,TRUE
+Syrian Arab Republic,SY,TRS,BV,Not Free,20178485,🇸🇾,FALSE,FALSE
+Taiwan,TW,FPTP,Parallel,Free,22974347,🇹🇼,FALSE,TRUE
+Tajikistan,TJ,TRS,Parallel,Not Free,7349145,🇹🇯,FALSE,TRUE
+"Tanzania, United Republic of",TZ,FPTP,FPTP,Not Free,41048532,🇹🇿,FALSE,FALSE
+Thailand,TH,Not applicable,Parallel,Not Free,65905410,🇹🇭,FALSE,TRUE
+The Gambia,GM,FPTP,FPTP,Partly Free,2760000,🇬🇲,FALSE,FALSE
+Timor-Leste,TL,TRS,List PR,Free,1131612,🇹🇱,FALSE,FALSE
+Togo,TG,TRS,List PR,Partly Free,6019877,🇹🇬,FALSE,TRUE
+Tonga,TO,Not applicable,FPTP,Free,104175,🇹🇴,FALSE,FALSE
+Trinidad and Tobago,TT,Not applicable,FPTP,Free,1368000,🇹🇹,FALSE,TRUE
+Tunisia,TN,TRS,TRS,Partly Free,10486339,🇹🇳,FALSE,TRUE
+Turkey,TR,TRS,List PR,Not Free,76805524,🇹🇷,FALSE,FALSE
+Turkmenistan,TM,TRS,TRS,Not Free,4884887,🇹🇲,FALSE,FALSE
+Tuvalu,TV,Not applicable,BV,Free,9646,🇹🇻,FALSE,FALSE
+Uganda,UG,TRS,FPTP,Not Free,32369558,🇺🇬,FALSE,FALSE
+Ukraine,UA,TRS,Parallel,Partly Free,45700395,🇺🇦,FALSE,FALSE
+United Arab Emirates,AE,Not applicable,No direct elections,Not Free,4798491,🇦🇪,TRUE,FALSE
+United Kingdom,GB,Not applicable,FPTP,Free,62262000,🇬🇧,FALSE,TRUE
+United States,US,FPTP,FPTP,Free,313973000,🇺🇸,TRUE,TRUE
+Uruguay,UY,TRS,List PR,Free,3494382,🇺🇾,FALSE,TRUE
+Uzbekistan,UZ,TRS,TRS,Not Free,27606007,🇺🇿,FALSE,TRUE
+Vanuatu,VU,Not applicable,SNTV,Free,327777,🇻🇺,FALSE,FALSE
+Venezuela,VE,FPTP,Parallel,Not Free,26814843,🇻🇪,TRUE,FALSE
+Viet Nam,VN,Not applicable,TRS,Not Free,86967524,🇻🇳,FALSE,FALSE
+Yemen,YE,TRS,FPTP,Not Free,23822783,🇾🇪,FALSE,TRUE
+Zambia,ZM,TRS,FPTP,Partly Free,11862740,🇿🇲,FALSE,FALSE
+Zimbabwe,ZW,TRS,Parallel,Not Free,12619600,🇿🇼,FALSE,TRUE

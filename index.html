@@ -20,7 +20,7 @@
       --free:#7898b8; --partly:#ca9568; --notfree:#a85e5c;
       --pr:#31a9c6; --pres:#d9a441; --second:#a982cf; --bd:#e75653;
       --has-any:#ddd8cd; --map-base:#66645f; --dark-fill:#2a2927; --unmapped:#222121;
-      --dim:#4b4945; --step-scroll:1.55;
+      --dim:#4b4945; --step-scroll:2;
       --font-display:"museo-sans",Arial,sans-serif;
       --font-body:"utopia-std",Georgia,serif;
       --font-mono:"IBM Plex Mono",ui-monospace,monospace;
@@ -29,7 +29,7 @@
     html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);
       -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     *{box-sizing:border-box}
-    .scrolly{position:relative;height:1550vh}
+    .scrolly{position:relative;height:2000vh}
     .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--bg)}
     #viz{position:absolute;inset:0;width:100%;height:100%}
     .vignette{position:absolute;inset:0;pointer-events:none;
@@ -271,10 +271,10 @@
   // Each paragraph rises into place, holds, then travels fully upward. A blank
   // interval between cards lets the map change and settle before the next text
   // arrives; no two cards share the stage.
-  const CARD_ENTER = 0.22;
-  const CARD_HOLD = 0.28;
-  const CARD_EXIT = 0.20;
-  const MAP_SWITCH = 0.56;
+  const CARD_ENTER = 0.20;
+  const CARD_HOLD = 0.30;
+  const CARD_EXIT = 0.28;
+  const MAP_SWITCH = 0.62;
   const OFFSCREEN_PAD = 32;
   const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

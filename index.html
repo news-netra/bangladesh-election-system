@@ -20,7 +20,7 @@
       --free:#7898b8; --partly:#ca9568; --notfree:#a85e5c;
       --pr:#31a9c6; --pres:#d9a441; --second:#a982cf; --bd:#e75653;
       --has-any:#ddd8cd; --map-base:#66645f; --dark-fill:#2a2927; --unmapped:#222121;
-      --dim:#4b4945; --step-scroll:1.25;
+      --dim:#4b4945; --step-scroll:1.55;
       --font-display:"museo-sans",Arial,sans-serif;
       --font-body:"utopia-std",Georgia,serif;
       --font-mono:"IBM Plex Mono",ui-monospace,monospace;
@@ -29,7 +29,7 @@
     html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);
       -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     *{box-sizing:border-box}
-    .scrolly{position:relative;height:1332vh}
+    .scrolly{position:relative;height:1550vh}
     .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--bg)}
     #viz{position:absolute;inset:0;width:100%;height:100%}
     .vignette{position:absolute;inset:0;pointer-events:none;
@@ -41,23 +41,16 @@
     .card{--step-accent:var(--bd);position:absolute;top:52%;left:clamp(24px,5vw,80px);
       width:min(400px,38vw);transform:translateY(-50%);will-change:transform,opacity;
       visibility:hidden;opacity:0;background:rgba(25,24,24,.94);border-top:2px solid var(--step-accent);
-      border-bottom:1px solid var(--line);padding:22px 20px 24px}
+      border-bottom:1px solid var(--line);padding:20px 20px 22px}
     .card[data-step="3"]{--step-accent:var(--has-any)}
     .card[data-step="4"]{--step-accent:var(--pr)}
     .card[data-step="5"]{--step-accent:var(--pres)}
     .card[data-step="6"]{--step-accent:var(--second)}
     .card[data-step="7"],.card[data-step="8"]{--step-accent:var(--bd)}
-    .card .kicker{font-family:var(--font-mono);font-size:10.5px;font-weight:500;
-      letter-spacing:.13em;text-transform:uppercase;color:var(--step-accent);margin-bottom:12px}
-    .card h1,.card h2{font-family:var(--font-display);font-weight:700;letter-spacing:-.018em;text-wrap:balance}
-    .card h1{font-size:clamp(30px,3.2vw,46px);line-height:1.03;margin:0 0 14px}
-    .card h2{font-size:clamp(24px,2.35vw,34px);line-height:1.08;margin:0 0 12px}
-    .card p{margin:0;font-size:clamp(16px,1.35vw,19px);line-height:1.48;color:var(--body)}
-    .card p+p{margin-top:11px}
+    .card p{margin:0;color:var(--body);font-family:var(--font-display);font-size:clamp(18px,1.55vw,22px);
+      font-weight:300;letter-spacing:-.006em;line-height:1.44;text-wrap:pretty}
     .card .n{color:var(--ink);font-family:var(--font-mono);font-size:.9em;font-weight:600;
       font-feature-settings:"tnum" 1}
-    .card .map-key{margin-top:14px;padding-top:11px;border-top:1px solid var(--line);
-      color:var(--muted);font-family:var(--font-mono);font-size:10.5px;line-height:1.55}
 
     .cue{position:absolute;left:clamp(24px,5vw,80px);bottom:24px;z-index:8;display:flex;
       align-items:center;gap:8px;color:var(--muted);font:500 10px/1 var(--font-mono);
@@ -138,14 +131,13 @@
       .vignette{background:linear-gradient(180deg,transparent 0,transparent 42%,rgba(25,24,24,.86) 60%,var(--bg) 100%)}
       .card{top:68%;left:16px;width:calc(100vw - 32px);padding:16px 14px 18px;background:rgba(25,24,24,.95)}
       .card[data-step="8"]{top:20%}
-      .card h1{font-size:30px}.card h2{font-size:24px}.card p{font-size:15.5px;line-height:1.45}
-      .card .map-key{font-size:9.5px;margin-top:10px;padding-top:9px}
+      .card p{font-size:17px;line-height:1.42}
       .legend{top:10px;left:12px;right:12px;max-width:none;gap:9px;font-size:9px;padding:7px 0}
       .legend .legend-set{gap:9px}.legend .swatch{width:8px;height:8px}.legend .cap-t{font-size:8.5px}
       .cue{left:16px;bottom:12px}.tooltip{width:220px}
     }
-    @media (max-height:650px){.card{padding-top:14px;padding-bottom:14px}.card p{font-size:14px}.card h2{font-size:22px}}
-    @media (max-height:450px){.card[data-step="8"]{top:18%}.card[data-step="8"] p{display:none}}
+    @media (max-height:650px){.card{padding-top:14px;padding-bottom:14px}.card p{font-size:15px}}
+    @media (max-height:450px){.card[data-step="8"]{top:18%}.card[data-step="8"] p{font-size:13px;line-height:1.32}}
     @media (prefers-reduced-motion:reduce){
       #viz .unit,#viz .geo,#viz .geo path,#viz .bdmark,#viz .bd-ring,
       #viz .rowname,#viz .colhead,#viz .dot,#viz .bd-band{transition:none}
@@ -195,57 +187,38 @@
 
       <div class="cards" id="cards">
         <div class="card" data-step="0">
-          <div class="kicker">Elections around the world</div>
-          <h1>When a plurality becomes total power</h1>
           <p>First-past-the-post can turn less than half the vote into a majority of seats. The question is what else can restrain that majority. Start with <span class="n" id="count-0">198</span> political systems.</p>
         </div>
 
         <div class="card" data-step="1">
-          <div class="kicker">First cut</div>
-          <h2>Set aside the smallest states</h2>
           <p>Fewer than 10 million people, and representation works differently. <span class="n" id="count-1">82</span> remain.</p>
         </div>
 
         <div class="card" data-step="2">
-          <div class="kicker">Second cut</div>
-          <h2>And the ones that aren't free</h2>
           <p>Where elections don't decide power, the method is beside the point. <span class="n" id="count-2">47</span> remain — and one of them is Bangladesh.</p>
-          <p class="map-key">Countries in colour remain in the comparison; countries in charcoal are out.</p>
         </div>
 
         <div class="card" data-step="3">
-          <div class="kicker">The common pattern</div>
-          <h2>Almost every country adds a brake</h2>
           <p><span class="n" id="count-3">46</span> of the 47 have at least one arrangement that can keep a simple parliamentary majority from becoming the only source of power.</p>
         </div>
 
         <div class="card" data-step="4">
-          <div class="kicker">One</div>
-          <h2>Make parliament more proportional</h2>
           <p><span class="n" id="count-4">32</span> elect all or some parliamentary seats proportionally, bringing vote share closer to seat share.</p>
         </div>
 
         <div class="card" data-step="5">
-          <div class="kicker">Two</div>
-          <h2>Elect the president separately</h2>
           <p><span class="n" id="count-5">30</span> give voters a separate national choice. In some countries that president holds executive power; elsewhere the office still carries a mandate outside parliament.</p>
         </div>
 
         <div class="card" data-step="6">
-          <div class="kicker">Three</div>
-          <h2>Add a second chamber</h2>
           <p><span class="n" id="count-6">32</span> have another legislative chamber. Some represent territories or regions; others revise laws. Their powers range from delay and renewed debate to an outright veto.</p>
         </div>
 
         <div class="card" data-step="7">
-          <div class="kicker">The exception</div>
-          <h2>Only one of the 47 has none</h2>
           <p>Bangladesh has an FPTP elected chamber, no separately elected president and no second chamber. On these measures, a plurality can take the whole elected legislature.</p>
         </div>
 
         <div class="card" data-step="8">
-          <div class="kicker">The comparison</div>
-          <h2>Bangladesh is the outlier</h2>
           <p>Across the 47-country table, Bangladesh is the only row without a mark in any of the three columns.</p>
         </div>
       </div>
@@ -301,14 +274,14 @@
   "use strict";
 
   // ---------- editorial pacing ----------
-  // A short cross-fade and small vertical shift replace the old full-screen card
-  // travel. The graphic gets a quiet beat between paragraphs, like a newsroom
-  // scrollytelling graphic rather than a slide deck.
-  const CARD_HOLD = 0.18;
-  const CARD_FADE = 0.34;
-  const CARD_SHIFT = 34;
-  const READING_PAUSE_STEP = 2;
-  const READING_PAUSE = 0.65;
+  // Each paragraph rises into place, holds, then travels fully upward. A blank
+  // interval between cards lets the map change and settle before the next text
+  // arrives; no two cards share the stage.
+  const CARD_ENTER = 0.22;
+  const CARD_HOLD = 0.28;
+  const CARD_EXIT = 0.20;
+  const MAP_SWITCH = 0.56;
+  const OFFSCREEN_PAD = 32;
   const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ---------- helpers ----------
@@ -436,7 +409,7 @@
     // calc(), which is not consistently supported across publishing browsers.
     const scrollUnit=window.CSS && window.CSS.supports && window.CSS.supports('height','100svh') ? 'svh' : 'vh';
     document.getElementById('scrolly').style.height =
-      ((N + READING_PAUSE + 1) * getStepScroll() * 100) + scrollUnit;
+      ((N + 1) * getStepScroll() * 100) + scrollUnit;
     build();
     window.addEventListener('resize', ()=>{ build(); render(); }, {passive:true});
     window.addEventListener('scroll', onScroll, {passive:true});
@@ -782,28 +755,31 @@
     if(range<=0) return;
 
     const scrolled=clamp(-rect.top,0,range);
-    const rawP=scrolled/(stageH*getStepScroll());
-    // Give the “47 remain” finding a dedicated reading pause. The narrative
-    // position holds still while the reader scrolls, then resumes smoothly.
-    const p=rawP<=READING_PAUSE_STEP ? rawP
-      : rawP<=READING_PAUSE_STEP+READING_PAUSE ? READING_PAUSE_STEP
-      : rawP-READING_PAUSE;
+    const p=scrolled/(stageH*getStepScroll());
 
     const smooth=t=>t*t*(3-2*t);
-    const last=cardEls.length-1;
     for(let i=0;i<cardEls.length;i++){
       const d=p-i;
-      const distance=Math.abs(d);
-      let opacity,ty;
-      if(i===last && d>0){opacity=1;ty=0}
-      else if(reduceMotion){opacity=Math.round(p)===i?1:0;ty=0}
-      else if(distance<=CARD_HOLD){opacity=1;ty=0}
-      else{
-        const t=smooth(clamp((distance-CARD_HOLD)/CARD_FADE,0,1));
-        opacity=1-t;
-        ty=(d>0?-1:1)*CARD_SHIFT*t;
-      }
       const el=cardEls[i];
+      const half=el.offsetHeight/2;
+      const anchor=el.offsetTop;
+      const enterDistance=stageH-anchor+half+OFFSCREEN_PAD;
+      const exitDistance=anchor+half+OFFSCREEN_PAD;
+      let opacity=0,ty=enterDistance;
+      if(reduceMotion){
+        const visible=d>=-CARD_ENTER && d<=CARD_HOLD;
+        opacity=visible?1:0; ty=0;
+      } else if(d>=-CARD_ENTER && d<0){
+        const t=smooth((d+CARD_ENTER)/CARD_ENTER);
+        opacity=1; ty=enterDistance*(1-t);
+      } else if(d>=0 && d<=CARD_HOLD){
+        opacity=1; ty=0;
+      } else if(d>CARD_HOLD && d<CARD_HOLD+CARD_EXIT){
+        const t=smooth((d-CARD_HOLD)/CARD_EXIT);
+        opacity=1; ty=-exitDistance*t;
+      } else if(d>=CARD_HOLD+CARD_EXIT){
+        ty=-exitDistance;
+      }
       el.style.transform=`translateY(-50%) translateY(${ty.toFixed(1)}px)`;
       el.style.opacity=opacity.toFixed(3);
       el.style.visibility=opacity<.01?'hidden':'visible';
@@ -811,7 +787,9 @@
     cueEl.style.opacity = p>0.12 ? 0 : 1;
     progressEl.style.width = (clamp(p/(N-1),0,1)*100).toFixed(1)+'%';
 
-    applyStep(clamp(Math.round(p),0,N-1));
+    // Change the map only after the old card has cleared, then leave a quiet
+    // beat before the following paragraph starts rising into view.
+    applyStep(clamp(Math.floor(p + 1 - MAP_SWITCH),0,N-1));
   }
 
   function getStepScroll(){

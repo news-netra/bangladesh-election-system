@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bangladesh’s Missing Brake — Netra News</title>
+  <title>Bangladesh got the wrong kind of proportional representation — Netra News</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" />
@@ -36,7 +36,7 @@
     html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);
       -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     *{box-sizing:border-box}
-    .scrolly{position:relative;height:2340vh}
+    .scrolly{position:relative;height:2112vh}
     .viz-failed .scrolly{height:100vh!important}
     .viz-failed .card[data-step="0"]{visibility:visible!important;opacity:1!important;transform:translateY(-50%)!important}
     .viz-failed .cue,.viz-failed .progress{display:none}
@@ -50,12 +50,12 @@
     .progress{position:absolute;top:0;left:0;height:3px;width:0;background:var(--bd);z-index:8}
 
     .cards{position:absolute;inset:0;z-index:6;pointer-events:none}
-    .card{position:absolute;top:52%;left:clamp(24px,5vw,80px);
-      width:min(400px,38vw);transform:translateY(-50%);will-change:transform,opacity;
-      visibility:hidden;opacity:0;background:var(--card-bg);padding:20px 20px 22px}
-    .card p{margin:0;color:var(--body);font-family:var(--font-display);font-size:clamp(18px,1.55vw,22px);
-      font-weight:300;letter-spacing:-.006em;line-height:1.44;text-wrap:pretty}
-    .card .n{color:var(--ink);font-family:var(--font-mono);font-size:.9em;font-weight:600;
+    .card{position:absolute;top:50%;left:clamp(28px,5.5vw,88px);
+      width:min(470px,42vw);transform:translateY(-50%);will-change:transform,opacity;
+      visibility:hidden;opacity:0;background:rgba(45,42,40,.97);padding:27px 29px 30px}
+    .card p{margin:0;color:#ebe7de;font-family:var(--font-body);font-size:clamp(22px,1.95vw,29px);
+      font-weight:400;letter-spacing:-.014em;line-height:1.34;text-wrap:pretty}
+    .card .n{color:var(--bd);font-family:var(--font-mono);font-size:.78em;font-weight:500;
       font-feature-settings:"tnum" 1}
 
     .cue{position:absolute;left:clamp(24px,5vw,80px);bottom:24px;z-index:8;display:flex;
@@ -123,11 +123,24 @@
     .tooltip .safeguard.on.second .mark{background:var(--second)}
     .tooltip .yn{font-weight:600}
 
+    .story-head{position:relative;z-index:1;min-height:100vh;min-height:100svh;display:flex;
+      align-items:center;background:var(--bg);color:var(--ink);padding:clamp(96px,15vh,170px) 22px}
+    .story-head-inner{width:min(1060px,100%);margin:0 auto;opacity:1;transform:none}
+    .story-head.is-preparing .story-head-inner{opacity:0;transform:translateY(38px);
+      transition:opacity 1.15s cubic-bezier(.2,.7,.2,1),transform 1.35s cubic-bezier(.2,.7,.2,1)}
+    .story-head.is-preparing.is-visible .story-head-inner{opacity:1;transform:translateY(0)}
+    .story-category{margin:0 0 25px;color:var(--bd);font:500 11px/1.2 var(--font-mono);
+      letter-spacing:.16em;text-transform:uppercase}
+    .story-title{max-width:1040px;margin:0;color:var(--ink);font:600 clamp(44px,6.4vw,84px)/1.025 var(--font-body);
+      letter-spacing:-.045em;text-wrap:balance}
+    .story-byline{margin:36px 0 0;color:var(--body);font:500 14px/1.45 var(--font-display);
+      letter-spacing:.005em}
+
     .article{background:var(--paper);color:var(--paper-ink);position:relative;z-index:1}
     .body{max-width:680px;margin:0 auto;padding:96px 22px 120px}
     .body .standfirst{font:400 22px/1.52 var(--font-body);color:#35332f;margin:0 0 64px;
       padding:0;text-wrap:pretty}
-    .body h2{font:700 clamp(27px,3.5vw,34px)/1.14 var(--font-display);letter-spacing:-.025em;
+    .body h2{font:600 clamp(29px,3.7vw,37px)/1.12 var(--font-body);letter-spacing:-.026em;
       margin:64px 0 16px;color:#191818;text-wrap:balance}
     .body h3{font:600 12px/1.3 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;
       margin:56px 0 12px;color:#5e5b55}
@@ -140,8 +153,8 @@
     .prviz-wide .prviz-head{margin-left:110px}
     .prviz-eyebrow{margin:0 0 9px;color:var(--party-bnp);font:500 11px/1.3 var(--font-mono);
       letter-spacing:.13em;text-transform:uppercase}
-    .body .prviz-title{margin:0;color:var(--paper-ink);font:700 clamp(24px,3vw,31px)/1.14 var(--font-display);
-      letter-spacing:-.022em;text-transform:none;text-wrap:balance}
+    .body .prviz-title{margin:0;color:var(--paper-ink);font:600 clamp(26px,3.2vw,34px)/1.13 var(--font-body);
+      letter-spacing:-.025em;text-transform:none;text-wrap:balance}
     .body .prviz-deck{max-width:650px;margin:10px 0 0;color:var(--paper-muted);
       font:300 16px/1.48 var(--font-display)}
     .prviz-chart{position:relative;width:100%;min-height:220px}
@@ -153,6 +166,9 @@
     .prviz-chart .prviz-inside{fill:var(--paper)}
     .prviz-legend{display:flex;gap:10px 17px;align-items:center;flex-wrap:wrap;margin:16px 0 0;
       color:var(--paper-muted);font:400 11px/1.35 var(--font-mono)}
+    .prviz-legend--above{margin:0 0 20px}
+    .prviz-map-legends{display:grid;gap:9px;margin:0 0 20px}
+    .prviz-map-legends .prviz-legend{margin:0}
     .prviz-swatch{width:10px;height:10px;display:inline-block;flex:0 0 auto;background:var(--party-other)}
     .prviz-legend-item{display:inline-flex;align-items:center;gap:6px}
     .prviz-shift{display:grid;grid-template-columns:auto auto auto 1fr;gap:9px 13px;align-items:baseline;
@@ -161,19 +177,9 @@
       color:var(--party-bnp);font-feature-settings:"tnum" 1}
     .prviz-shift .prviz-arrow{color:var(--paper-muted);font-size:22px}
     .prviz-shift span:last-child{max-width:290px;color:var(--paper-muted);font-size:11px;line-height:1.4}
-    .prviz-caption{margin-top:15px;color:var(--paper-muted);font:400 11.5px/1.55 var(--font-mono)}
-    .prviz-caption .src{display:block;margin-top:4px;color:#989188}
+    .prviz-caption{margin-top:17px;color:var(--paper-muted);font:400 11px/1.5 var(--font-mono)}
     .prviz-caption a{color:inherit;text-underline-offset:2px}
     .prviz-note{margin-top:9px;color:var(--paper-muted);font:400 11px/1.5 var(--font-mono)}
-    .prviz-data{margin-top:22px;color:var(--paper-muted);font:400 12px/1.45 var(--font-mono)}
-    .prviz-data summary{cursor:pointer;width:max-content;color:var(--paper-ink)}
-    .prviz-table-wrap{overflow-x:auto;margin-top:13px}
-    .prviz-data table{border-collapse:collapse;width:100%;min-width:590px;font:400 11px/1.35 var(--font-mono)}
-    .prviz-data caption{text-align:left;padding:0 0 7px;color:var(--paper-muted);font:400 11px/1.35 var(--font-mono)}
-    .prviz-data th,.prviz-data td{padding:8px 9px;text-align:right;vertical-align:top;border-bottom:1px solid var(--paper-rule)}
-    .prviz-data th:first-child,.prviz-data td:first-child{text-align:left;padding-left:0}
-    .prviz-data th{color:var(--paper-ink);font-weight:500}.prviz-data td{color:var(--paper-muted)}
-
     .prviz-controls{display:flex;align-items:baseline;gap:9px 18px;flex-wrap:wrap;margin:0 0 20px;
       font:400 11px/1.3 var(--font-mono);color:var(--paper-muted)}
     .prviz-district-effect{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 44px;
@@ -209,8 +215,8 @@
     .prviz-mini-bar{height:10px;display:flex;background:#ddd7cd;overflow:hidden}
     .prviz-mini-segment{height:100%;transition:width .45s cubic-bezier(.2,.7,.2,1)}
     .prviz-fallback-composition{color:var(--paper-muted);font:400 10px/1.4 var(--font-mono)}
-    .prviz-map-summary{margin:17px 0 0;padding:15px 17px;background:var(--paper-soft);color:var(--paper-ink);
-      font:500 14px/1.45 var(--font-display)}
+    .body .prviz-map-takeaway{margin:2px 0 20px;color:var(--paper-ink);
+      font:500 14.5px/1.45 var(--font-display)}
 
     .prviz-blueprint{width:calc(100% + 90px);margin:42px 0 56px -45px;padding:30px 34px 32px;
       background:var(--paper-soft)}
@@ -224,8 +230,8 @@
     @media (max-width:899px){
       .prviz-wide{width:calc(100% + 44px);margin-left:-22px}
       .prviz-wide .prviz-head,.prviz-wide .prviz-caption,.prviz-wide .prviz-note,
-      .prviz-wide .prviz-legend,.prviz-wide .prviz-data,.prviz-wide .prviz-controls,
-      .prviz-wide .prviz-map-summary,.prviz-wide .prviz-district-effect{margin-left:18px;margin-right:18px}
+      .prviz-wide .prviz-legend,.prviz-wide .prviz-controls,
+      .prviz-wide .prviz-map-takeaway,.prviz-wide .prviz-district-effect{margin-left:18px;margin-right:18px}
       .prviz-wide .prviz-chart{padding:0 12px}
       .prviz-map-grid{grid-template-columns:1fr;gap:18px}
       .prviz-map{min-height:460px}
@@ -233,6 +239,10 @@
     }
     @media (max-width:520px){
       .body{padding-top:72px}.body .standfirst{font-size:20px;margin-bottom:52px}
+      .story-head{padding:104px 20px 88px}
+      .story-category{margin-bottom:20px}
+      .story-title{font-size:clamp(40px,12.5vw,56px);line-height:1.04;letter-spacing:-.037em}
+      .story-byline{margin-top:28px;font-size:13px}
       .prviz-figure{margin-top:44px;margin-bottom:58px}
       .prviz-shift{grid-template-columns:auto auto auto;gap:7px 10px}
       .prviz-shift span:last-child{grid-column:1/-1}
@@ -245,31 +255,39 @@
 
     @media (max-width:899px){
       .vignette{background:linear-gradient(180deg,transparent 0,transparent 42%,rgba(25,24,24,.86) 60%,var(--bg) 100%)}
-      .card{top:68%;left:16px;width:calc(100vw - 32px);padding:16px 14px 18px;background:var(--card-bg)}
+      .card{top:68%;left:14px;width:calc(100vw - 28px);padding:20px 19px 23px;background:rgba(45,42,40,.97)}
       .card[data-step="7"]{top:20%}
-      .card p{font-size:17px;line-height:1.42}
+      .card p{font-size:clamp(19px,5.25vw,23px);line-height:1.37}
+      .card[data-step="7"] p{font-size:18px}
       .legend{top:10px;left:12px;right:12px;max-width:none;gap:9px;font-size:9px;padding:7px 0}
       .legend .legend-set{gap:9px}.legend .swatch{width:8px;height:8px}.legend .cap-t{font-size:8.5px}
       .tally{top:88px;left:auto;right:16px;text-align:right}
       .tally .number{font-size:40px}.tally .label{font-size:8.5px}
       .cue{left:16px;bottom:12px}.tooltip{width:220px}
     }
-    @media (max-height:650px){.card{padding-top:14px;padding-bottom:14px}.card p{font-size:15px}.tally{top:72px}.tally .number{font-size:34px}}
+    @media (max-height:650px){
+      .card{padding-top:16px;padding-bottom:18px}.card p{font-size:16px}.tally{top:72px}.tally .number{font-size:34px}
+      .story-head{padding:60px 20px 56px}
+      .story-category{margin-bottom:14px}
+      .story-title{font-size:clamp(34px,5.6vw,48px);line-height:1.035;letter-spacing:-.034em}
+      .story-byline{margin-top:20px;font-size:12px}
+    }
     @media (max-height:450px){.card[data-step="7"]{top:26%}.card[data-step="7"] p{font-size:13px;line-height:1.32}}
     @media (prefers-reduced-motion:reduce){
       #viz .unit,#viz .geo,#viz .geo path,#viz .bdmark,#viz .bd-ring,
       #viz .rowname,#viz .colhead,#viz .dot,#viz .bd-no,#viz .bd-band,.vignette{transition:none}
       #viz .bd-halo,.cue svg{animation:none}.tally,.prviz-map path,.prviz-division-row,.prviz-mini-segment{transition:none}
+      .story-head-inner{opacity:1;transform:none;transition:none}
     }
   </style>
   <noscript><style>
     .scrolly{height:100vh!important}.card[data-step="0"]{visibility:visible!important;opacity:1!important;transform:translateY(-50%)!important}
-    .cue,.progress{display:none!important}
+    .cue,.progress{display:none!important}.story-head-inner{opacity:1!important;transform:none!important}
   </style></noscript>
 </head>
 <body>
 
-  <section class="scrolly" id="scrolly">
+  <section class="scrolly" id="scrolly" aria-label="How Bangladesh becomes an electoral outlier">
     <div class="stage" id="stage">
       <svg id="viz" role="img" aria-label="World map and comparison matrix of electoral safeguards">
         <defs>
@@ -354,9 +372,38 @@
     </div>
   </section>
 
+  <header class="story-head" id="story-head">
+    <div class="story-head-inner">
+      <p class="story-category">Opinion</p>
+      <h1 class="story-title" id="story-title">Bangladesh, the world's most unchecked majoritarian democracy, needed proportional representation. It got the wrong kind.</h1>
+      <p class="story-byline">By Syed Ahlan Jadid and Nazmul Ahasan</p>
+    </div>
+  </header>
+  <script>
+  (function(){
+    const head=document.getElementById('story-head');
+    const reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!head||reduced||!('IntersectionObserver' in window)) return;
+    head.classList.add('is-preparing');
+    const reveal=()=>head.classList.add('is-visible');
+    const observer=new IntersectionObserver(entries=>{
+      if(entries.some(entry=>entry.isIntersecting)){
+        reveal();
+        observer.disconnect();
+      }
+    },{threshold:.16,rootMargin:'0px 0px -8%'});
+    observer.observe(head);
+    const rect=head.getBoundingClientRect();
+    if(rect.bottom<=0||(rect.top<window.innerHeight*.84&&rect.bottom>0)){
+      requestAnimationFrame(reveal);
+      observer.disconnect();
+    }
+  })();
+  </script>
+
   <!-- ===================== ARTICLE BODY ===================== -->
   <div class="article">
-  <article class="body">
+  <article class="body" aria-labelledby="story-title">
     <p class="standfirst">Bangladesh is debating a second chamber elected by proportional representation. It could become a counterweight to the lower-house majority — or a copy of it. The ballot, district, formula and decision rule decide which.</p>
     <p>The reform debate contains two distinct models: use each party’s lower-house vote share to compose the upper house, or use the share of seats it won below. The data supplied for this analysis can simulate only the first; it does not contain the party-by-party lower-house seat totals needed to test the second.</p>
 
@@ -366,24 +413,23 @@
 
     <figure class="prviz-figure prviz-wide" id="vote-denominator">
       <div class="prviz-head">
-        <div class="prviz-eyebrow">Which votes count</div>
         <h3 class="prviz-title">Drop 4.34 million votes, and 49.97% becomes 53.04%</h3>
         <p class="prviz-deck">All valid lower-house votes compared with the party-only vote pool used in the upper-house simulation.</p>
       </div>
-      <div class="prviz-chart" id="prviz-vote-chart" aria-live="polite">
-        <div class="prviz-loading">Loading vote comparison…</div>
-      </div>
-      <div class="prviz-legend" aria-label="Vote-group colours">
+      <div class="prviz-legend prviz-legend--above" aria-label="Vote-group colours">
         <span class="prviz-legend-item"><span class="prviz-swatch" style="background:var(--party-bnp)"></span>BNP</span>
         <span class="prviz-legend-item"><span class="prviz-swatch" style="background:var(--party-jamaat)"></span>Jamaat</span>
         <span class="prviz-legend-item"><span class="prviz-swatch" style="background:var(--party-independent)"></span>Independent and rebel candidates</span>
         <span class="prviz-legend-item"><span class="prviz-swatch" style="background:var(--party-other)"></span>Other parties</span>
       </div>
+      <div class="prviz-chart" id="prviz-vote-chart" aria-live="polite">
+        <div class="prviz-loading">Loading vote comparison…</div>
+      </div>
       <div class="prviz-shift" aria-label="BNP share rises from 49.97 per cent to 53.04 per cent">
         <strong>49.97%</strong><span class="prviz-arrow" aria-hidden="true">→</span><strong>53.04%</strong>
         <span>BNP’s share after independent and rebel votes are excluded from the denominator</span>
       </div>
-      <figcaption class="prviz-caption">The excluded votes are not assigned to another party. Removing them shrinks the denominator and renormalises the remaining shares, creating a modeled majority before any seat formula is applied. <span class="src">Source: supplied 2026 results by division; Netra calculation.</span></figcaption>
+      <figcaption class="prviz-caption">Source: supplied 2026 results by division; Netra calculation. Independent and rebel votes are excluded from the model.</figcaption>
     </figure>
 
     <h2>“PR” does not name one result</h2>
@@ -392,30 +438,14 @@
 
     <figure class="prviz-figure prviz-wide" id="formula-comparison">
       <div class="prviz-head">
-        <div class="prviz-eyebrow">How votes become seats</div>
         <h3 class="prviz-title">Same votes, four different chambers</h3>
         <p class="prviz-deck">Seats are allocated within each division. Reference lines mark 51 and 67 votes in a fully constituted 100-seat house.</p>
       </div>
+      <div class="prviz-legend prviz-legend--above" id="prviz-method-legend" aria-label="Party colours"></div>
       <div class="prviz-chart" id="prviz-method-chart" aria-live="polite">
         <div class="prviz-loading">Loading seat comparison…</div>
       </div>
-      <div class="prviz-legend" id="prviz-method-legend" aria-label="Party colours"></div>
-      <details class="prviz-data">
-        <summary>See exact seat counts</summary>
-        <div class="prviz-table-wrap" role="region" aria-label="Exact seat counts by allocation method" tabindex="0">
-          <table>
-            <caption>Seats by method and party</caption>
-            <thead><tr><th scope="col">Method</th><th scope="col">BNP</th><th scope="col">Jamaat</th><th scope="col">NCP</th><th scope="col">IAB</th><th scope="col">BKM</th><th scope="col">Islamic Front</th><th scope="col">Khelafat Majlis</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Hare quota</th><td>54</td><td>35</td><td>4</td><td>3</td><td>2</td><td>1</td><td>1</td></tr>
-              <tr><th scope="row">Droop / Hagenbach-Bischoff / Webster</th><td>56</td><td>35</td><td>4</td><td>3</td><td>2</td><td>0</td><td>0</td></tr>
-              <tr><th scope="row">Modified Sainte-Laguë</th><td>56</td><td>37</td><td>4</td><td>2</td><td>1</td><td>0</td><td>0</td></tr>
-              <tr><th scope="row">D’Hondt</th><td>61</td><td>36</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
-      <figcaption class="prviz-caption">Among these 100-seat allocations, Hare has the lowest Gallagher disproportionality and D’Hondt the highest. No party-vote eligibility threshold is applied. Imperiali quota variants are omitted because the supplied implementation produces 101 and 105 seats rather than 100. <span class="src">Source: supplied 2026 results by division; calculations reproduced from the accompanying R Markdown analysis.</span></figcaption>
+      <figcaption class="prviz-caption">Source: supplied 2026 results by division; Netra calculation. Imperiali variants are omitted because they return 101 and 105 seats.</figcaption>
     </figure>
 
     <h2>Geography is another electoral rule</h2>
@@ -425,13 +455,20 @@
 
     <figure class="prviz-figure prviz-wide" id="division-comparison">
       <div class="prviz-head">
-        <div class="prviz-eyebrow">Where seats are allocated</div>
         <h3 class="prviz-title" id="prviz-map-title">D’Hondt gives BNP majorities in Barishal and Rangpur</h3>
         <p class="prviz-deck">Switch between the proportional and major-party-favouring endpoints. The map shows who holds a majority; the bars show every represented party.</p>
       </div>
       <div class="prviz-district-effect" aria-label="How division allocation changes the national result">
         <div class="prviz-district-effect-item"><span class="prviz-district-effect-label">Hare</span><strong>10 → 7</strong><small>parties represented · national pool → eight divisions</small></div>
         <div class="prviz-district-effect-item"><span class="prviz-district-effect-label">D’Hondt</span><strong>56 → 61</strong><small>BNP seats · national pool → eight divisions</small></div>
+      </div>
+      <div class="prviz-map-legends">
+        <div class="prviz-legend" aria-label="Map colours">
+          <span class="prviz-legend-item"><span class="prviz-swatch" style="background:var(--party-bnp)"></span>BNP majority</span>
+          <span class="prviz-legend-item"><span class="prviz-swatch" style="background:var(--no-majority)"></span>No party majority</span>
+          <span class="prviz-legend-item"><span class="prviz-swatch" style="background:var(--party-jamaat)"></span>Jamaat majority</span>
+        </div>
+        <div class="prviz-legend" id="prviz-map-party-legend" aria-label="Parties in division bars"></div>
       </div>
       <div class="prviz-controls">
         <span class="prviz-control-label">Allocation formula</span>
@@ -440,20 +477,14 @@
           <button type="button" data-prviz-map-method="dhondt" aria-pressed="true">D’Hondt</button>
         </span>
       </div>
+      <p class="prviz-map-takeaway" id="prviz-map-summary" aria-live="polite">D’Hondt: BNP majority in 7 of 8 divisions; Jamaat majority in Khulna.</p>
       <div class="prviz-map-grid">
         <div class="prviz-map" id="prviz-division-map">
           <div class="prviz-loading">Loading division map…</div>
         </div>
         <div class="prviz-division-list" id="prviz-division-list"></div>
       </div>
-      <div class="prviz-legend" aria-label="Map colours">
-        <span class="prviz-legend-item"><span class="prviz-swatch" style="background:var(--party-bnp)"></span>BNP majority</span>
-        <span class="prviz-legend-item"><span class="prviz-swatch" style="background:var(--no-majority)"></span>No party majority</span>
-        <span class="prviz-legend-item"><span class="prviz-swatch" style="background:var(--party-jamaat)"></span>Jamaat majority</span>
-      </div>
-      <div class="prviz-legend" id="prviz-map-party-legend" aria-label="Parties in division bars"></div>
-      <p class="prviz-map-summary" id="prviz-map-summary" aria-live="polite">Under D’Hondt, BNP holds a majority in seven divisions; Jamaat holds Khulna.</p>
-      <figcaption class="prviz-caption">Division magnitudes are apportioned by registered voters, using largest remainder. Boundary: <a href="https://www.geoboundaries.org/">geoBoundaries gbOpen</a>, BGD ADM1 (CC BY 4.0). <span class="src">Source: supplied 2026 results by division; Netra calculation.</span></figcaption>
+      <figcaption class="prviz-caption">Source: supplied 2026 results by division; Netra calculation. Boundary: <a href="https://www.geoboundaries.org/">geoBoundaries gbOpen</a>, BGD ADM1 (CC BY 4.0).</figcaption>
     </figure>
 
     <h2>Build a counterweight, not a mirror</h2>
@@ -1344,7 +1375,9 @@
       .attr('aria-labelledby','prviz-method-svg-title prviz-method-svg-desc');
     svg.append('title').attr('id','prviz-method-svg-title').text('Four allocations of the same upper-house votes that total 100 seats');
     svg.append('desc').attr('id','prviz-method-svg-desc')
-      .text('BNP receives between 54 seats under Hare quota and 61 under D’Hondt. Hare seats seven parties; every other displayed result seats five.');
+      .text(data.methods.map(method=>methodShort[method.id]+': '+partyOrder
+        .filter(party=>method.seats[party])
+        .map(party=>party+' '+method.seats[party]).join(', ')).join('. ')+'.');
     const represented=partyOrder.filter(p=>data.methods.some(method=>method.seats[p]));
     renderPartyLegend(document.getElementById('prviz-method-legend'),represented);
 
@@ -1496,9 +1529,9 @@
       const noMajority=statuses.filter(d=>d.status.key==='none').map(d=>d.name);
       const jamaat=statuses.filter(d=>d.status.key==='jamaat').map(d=>d.name);
       const methodName=method==='hare'?'Hare quota':'D’Hondt';
-      let text='Under '+methodName+', BNP holds a majority in '+bnp+' divisions';
-      if(noMajority.length) text+='; no party has a majority in '+noMajority.join(' or ');
-      if(jamaat.length) text+='; Jamaat holds '+jamaat.join(' and ');
+      let text=methodName+': BNP majority in '+bnp+' of '+statuses.length+' divisions';
+      if(noMajority.length) text+='; no party majority in '+noMajority.join(' or ');
+      if(jamaat.length) text+='; Jamaat majority in '+jamaat.join(' and ');
       text+='.';
       summary.textContent=text;
       heading.textContent=method==='hare'

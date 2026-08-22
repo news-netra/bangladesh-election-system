@@ -1,0 +1,355 @@
+{
+  "summary": {
+    "validVotes": 74974928,
+    "modeledVotes": 70635222,
+    "excludedIndependentVotes": 4339706,
+    "excludedShare": 0.057882096265567604,
+    "bnpAllValidShare": 0.49972561494157086,
+    "bnpModeledShare": 0.5304278933249477,
+    "jamaatAllValidShare": 0.31896982948753216,
+    "jamaatModeledShare": 0.33856678471259
+  },
+  "voteGroups": [
+    {
+      "name": "BNP",
+      "votes": 37466892
+    },
+    {
+      "name": "Jamaat",
+      "votes": 23914740
+    },
+    {
+      "name": "Independent candidates",
+      "votes": 4339706
+    },
+    {
+      "name": "Other parties",
+      "votes": 9253590
+    }
+  ],
+  "methods": [
+    {
+      "id": "hare",
+      "label": "Hare quota",
+      "seats": {
+        "BNP": 54,
+        "Jamaat": 35,
+        "NCP": 4,
+        "IAB": 3,
+        "BKM": 2,
+        "Islamic Front": 1,
+        "Khelafat Majlis": 1
+      },
+      "partiesRepresented": 7,
+      "gallagherIndex": 1.624
+    },
+    {
+      "id": "droop-webster",
+      "label": "Droop / Hagenbach-Bischoff / Webster",
+      "seats": {
+        "BNP": 56,
+        "Jamaat": 35,
+        "NCP": 4,
+        "IAB": 3,
+        "BKM": 2
+      },
+      "partiesRepresented": 5,
+      "gallagherIndex": 2.616
+    },
+    {
+      "id": "modified-sainte-lague",
+      "label": "Modified Sainte-Laguë",
+      "seats": {
+        "BNP": 56,
+        "Jamaat": 37,
+        "NCP": 4,
+        "IAB": 2,
+        "BKM": 1
+      },
+      "partiesRepresented": 5,
+      "gallagherIndex": 3.494
+    },
+    {
+      "id": "dhondt",
+      "label": "D’Hondt",
+      "seats": {
+        "BNP": 61,
+        "Jamaat": 36,
+        "BKM": 1,
+        "IAB": 1,
+        "NCP": 1
+      },
+      "partiesRepresented": 5,
+      "gallagherIndex": 6.301
+    }
+  ],
+  "divisions": [
+    {
+      "name": "Barishal",
+      "magnitude": 6,
+      "registeredVoters": 7969278,
+      "validVotes": 4512914,
+      "modeledVotes": 4362823,
+      "excludedIndependentVotes": 150091,
+      "allocations": {
+        "hare": {
+          "BNP": 3,
+          "Jamaat": 2,
+          "IAB": 1
+        },
+        "droop-webster": {
+          "BNP": 3,
+          "Jamaat": 2,
+          "IAB": 1
+        },
+        "modified-sainte-lague": {
+          "BNP": 3,
+          "Jamaat": 2,
+          "IAB": 1
+        },
+        "dhondt": {
+          "BNP": 4,
+          "Jamaat": 1,
+          "IAB": 1
+        }
+      }
+    },
+    {
+      "name": "Chattogram",
+      "magnitude": 20,
+      "registeredVoters": 25674190,
+      "validVotes": 13808540,
+      "modeledVotes": 13037006,
+      "excludedIndependentVotes": 771534,
+      "allocations": {
+        "hare": {
+          "BNP": 11,
+          "Jamaat": 6,
+          "IAB": 1,
+          "NCP": 1,
+          "Islamic Front": 1
+        },
+        "droop-webster": {
+          "BNP": 12,
+          "Jamaat": 6,
+          "IAB": 1,
+          "NCP": 1
+        },
+        "modified-sainte-lague": {
+          "BNP": 12,
+          "Jamaat": 7,
+          "NCP": 1
+        },
+        "dhondt": {
+          "BNP": 13,
+          "Jamaat": 7
+        }
+      }
+    },
+    {
+      "name": "Dhaka",
+      "magnitude": 24,
+      "registeredVoters": 30559954,
+      "validVotes": 16262938,
+      "modeledVotes": 14794439,
+      "excludedIndependentVotes": 1468499,
+      "allocations": {
+        "hare": {
+          "BNP": 14,
+          "Jamaat": 6,
+          "IAB": 1,
+          "NCP": 2,
+          "BKM": 1
+        },
+        "droop-webster": {
+          "BNP": 14,
+          "Jamaat": 6,
+          "IAB": 1,
+          "NCP": 2,
+          "BKM": 1
+        },
+        "modified-sainte-lague": {
+          "BNP": 14,
+          "Jamaat": 6,
+          "IAB": 1,
+          "NCP": 2,
+          "BKM": 1
+        },
+        "dhondt": {
+          "BNP": 15,
+          "Jamaat": 7,
+          "NCP": 1,
+          "BKM": 1
+        }
+      }
+    },
+    {
+      "name": "Khulna",
+      "magnitude": 11,
+      "registeredVoters": 14235427,
+      "validVotes": 9918309,
+      "modeledVotes": 9482740,
+      "excludedIndependentVotes": 435569,
+      "allocations": {
+        "hare": {
+          "BNP": 5,
+          "Jamaat": 6
+        },
+        "droop-webster": {
+          "BNP": 5,
+          "Jamaat": 6
+        },
+        "modified-sainte-lague": {
+          "BNP": 5,
+          "Jamaat": 6
+        },
+        "dhondt": {
+          "BNP": 5,
+          "Jamaat": 6
+        }
+      }
+    },
+    {
+      "name": "Mymensingh",
+      "magnitude": 8,
+      "registeredVoters": 9834456,
+      "validVotes": 5510078,
+      "modeledVotes": 4827640,
+      "excludedIndependentVotes": 682438,
+      "allocations": {
+        "hare": {
+          "BNP": 5,
+          "Jamaat": 2,
+          "BKM": 1
+        },
+        "droop-webster": {
+          "BNP": 5,
+          "Jamaat": 2,
+          "BKM": 1
+        },
+        "modified-sainte-lague": {
+          "BNP": 5,
+          "Jamaat": 3
+        },
+        "dhondt": {
+          "BNP": 6,
+          "Jamaat": 2
+        }
+      }
+    },
+    {
+      "name": "Rajshahi",
+      "magnitude": 13,
+      "registeredVoters": 16378560,
+      "validVotes": 11308061,
+      "modeledVotes": 11016346,
+      "excludedIndependentVotes": 291715,
+      "allocations": {
+        "hare": {
+          "BNP": 7,
+          "Jamaat": 6
+        },
+        "droop-webster": {
+          "BNP": 7,
+          "Jamaat": 6
+        },
+        "modified-sainte-lague": {
+          "BNP": 7,
+          "Jamaat": 6
+        },
+        "dhondt": {
+          "BNP": 7,
+          "Jamaat": 6
+        }
+      }
+    },
+    {
+      "name": "Rangpur",
+      "magnitude": 11,
+      "registeredVoters": 14184120,
+      "validVotes": 9454005,
+      "modeledVotes": 9188825,
+      "excludedIndependentVotes": 265180,
+      "allocations": {
+        "hare": {
+          "BNP": 5,
+          "Jamaat": 5,
+          "NCP": 1
+        },
+        "droop-webster": {
+          "BNP": 5,
+          "Jamaat": 5,
+          "NCP": 1
+        },
+        "modified-sainte-lague": {
+          "BNP": 5,
+          "Jamaat": 5,
+          "NCP": 1
+        },
+        "dhondt": {
+          "BNP": 6,
+          "Jamaat": 5
+        }
+      }
+    },
+    {
+      "name": "Sylhet",
+      "magnitude": 7,
+      "registeredVoters": 8445682,
+      "validVotes": 4200083,
+      "modeledVotes": 3925403,
+      "excludedIndependentVotes": 274680,
+      "allocations": {
+        "hare": {
+          "BNP": 4,
+          "Jamaat": 2,
+          "Khelafat Majlis": 1
+        },
+        "droop-webster": {
+          "BNP": 5,
+          "Jamaat": 2
+        },
+        "modified-sainte-lague": {
+          "BNP": 5,
+          "Jamaat": 2
+        },
+        "dhondt": {
+          "BNP": 5,
+          "Jamaat": 2
+        }
+      }
+    }
+  ],
+  "nationalAllocations": {
+    "hare": {
+      "BNP": 53,
+      "Jamaat": 34,
+      "IAB": 3,
+      "NCP": 3,
+      "BKM": 2,
+      "GOP": 1,
+      "Islamic Front": 1,
+      "Jamiat (Khejur)": 1,
+      "Jatiya Party": 1,
+      "Khelafat Majlis": 1
+    },
+    "dhondt": {
+      "BNP": 56,
+      "Jamaat": 35,
+      "IAB": 3,
+      "NCP": 3,
+      "BKM": 2,
+      "Jatiya Party": 1
+    }
+  },
+  "excludedOutputs": [
+    {
+      "name": "Imperiali quota",
+      "seatsProduced": 101
+    },
+    {
+      "name": "Modified Imperiali quota",
+      "seatsProduced": 105
+    }
+  ]
+}

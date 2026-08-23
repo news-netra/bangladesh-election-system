@@ -9,6 +9,18 @@
     "jamaatAllValidShare": 0.31896982948753216,
     "jamaatModeledShare": 0.33856678471259
   },
+  "seatShareIllustration": {
+    "label": "BNP lower-house seat-share proposal (illustrative)",
+    "seats": {
+      "BNP": 72,
+      "Jamaat": 23,
+      "NCP": 2,
+      "BKM": 1,
+      "Other parties": 2
+    },
+    "basis": "Party-held general seats in the original declared lower-house result; independent-held seats excluded; smaller one-seat parties grouped; Hare largest-remainder rounding.",
+    "source": "https://www.bssnews.net/national-parlament-election-2026/360856"
+  },
   "voteGroups": [
     {
       "name": "BNP",

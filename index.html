@@ -16,19 +16,21 @@
 
     :root{
       color-scheme:light;
-      --bg:#f3f0e8; --bg-raised:#ebe6dc; --ink:#272620; --body:#48443d;
-      --muted:#67635c; --faint:#706b63; --line:#d3cdc3; --card-bg:#e5ded3;
-      --free:#91a8b8; --partly:#d0a47e; --notfree:#c58b87;
-      --pr:#3d737f; --pres:#8a652c; --second:#745d8d; --bd:#9b4641;
-      --has-any:#85827a; --comparison:#7f8c8f; --remainder:#71858a;
-      --map-base:#b9b4aa; --dark-fill:#d6d0c7; --unmapped:#e3ded5;
-      --dim:#beb8ae; --step-scroll:2.6;
-      --paper:#faf8f3; --paper-ink:#292722; --paper-body:#4d4942;
-      --paper-muted:#6f6961; --paper-soft:#ece7de; --paper-rule:#d8d0c4;
-      --party-bnp:#a94f49; --party-jamaat:#4f7469; --party-ncp:#6389a0;
-      --party-iab:#bd914f; --party-bkm:#8873a0; --party-if:#a97570;
-      --party-km:#7c766e; --party-independent:#625e58; --party-other:#b8b0a5;
-      --no-majority:#b58e51;
+      --bg:#ffffff; --bg-raised:#f8fcff; --ink:#0b0c0d; --body:#222222;
+      --muted:#637882; --faint:#637882; --line:#aebec7; --card-bg:#f0f6f9;
+      --accent:#1691b9;
+      --free:#4094c1; --partly:#d6a14a; --notfree:#d26f6d;
+      --pr:#137fa7; --pr-ink:#075b78; --pres:#d1932d; --pres-ink:#7a5a17;
+      --second:#8065aa; --second-ink:#5a3a7a; --bd:#b94f62;
+      --has-any:#7794a3; --comparison:#5f8294; --remainder:#337fa6;
+      --map-base:#c3d3db; --dark-fill:#e3ebef; --unmapped:#f2f6f8;
+      --dim:#c6d3d9; --step-scroll:2.6;
+      --paper:#ffffff; --paper-ink:#0b0c0d; --paper-body:#222222;
+      --paper-muted:#637882; --paper-soft:#f0f6f9; --paper-rule:#b8c8d0;
+      --party-bnp:#005f8f; --party-jamaat:#377b69; --party-ncp:#4a91ba;
+      --party-iab:#c27b2c; --party-bkm:#775ca6; --party-if:#b9505e;
+      --party-km:#606870; --party-independent:#35434c; --party-other:#8fa2ac;
+      --no-majority:#d09a3c;
       --font-display:"museo-sans",Arial,sans-serif;
       --font-body:"utopia-std",Georgia,serif;
       --font-mono:"IBM Plex Mono",ui-monospace,monospace;
@@ -44,11 +46,11 @@
     .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--bg)}
     #viz{position:absolute;inset:0;width:100%;height:100%}
     .vignette{position:absolute;inset:0;pointer-events:none;
-      background:linear-gradient(90deg,rgba(243,240,232,.94) 0,rgba(243,240,232,.38) 35%,transparent 60%),
-        linear-gradient(180deg,rgba(243,240,232,.22),transparent 20%,transparent 78%,rgba(243,240,232,.7));
+      background:linear-gradient(90deg,rgba(255,255,255,.94) 0,rgba(255,255,255,.38) 35%,transparent 60%),
+        linear-gradient(180deg,rgba(255,255,255,.22),transparent 20%,transparent 78%,rgba(255,255,255,.7));
       transition:opacity .45s ease}
     .vignette.is-clear{opacity:0}
-    .progress{position:absolute;top:0;left:0;height:3px;width:0;background:var(--bd);z-index:8}
+    .progress{position:absolute;top:0;left:0;height:6px;width:0;background:var(--accent);z-index:8}
 
     .cards{position:absolute;inset:0;z-index:6;pointer-events:none}
     .card{position:absolute;top:50%;left:clamp(28px,5.5vw,88px);
@@ -67,7 +69,7 @@
 
     .legend{position:absolute;top:20px;right:clamp(20px,4vw,60px);left:auto;z-index:7;
       display:flex;gap:12px;align-items:center;flex-wrap:wrap;max-width:min(720px,65vw);
-      padding:9px 0;background:rgba(243,240,232,.88);color:var(--muted);font:400 10.5px/1.35 var(--font-mono);
+      padding:9px 0;background:rgba(255,255,255,.9);color:var(--muted);font:400 10.5px/1.35 var(--font-mono);
       transition:opacity .45s ease}
     .legend .cap-t{letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding-left:10px}
     .legend .legend-set{display:flex;gap:13px;align-items:center;flex-wrap:wrap;padding-right:10px}
@@ -255,7 +257,7 @@
     }
 
     @media (max-width:899px){
-      .vignette{background:linear-gradient(180deg,transparent 0,transparent 42%,rgba(243,240,232,.86) 60%,var(--bg) 100%)}
+      .vignette{background:linear-gradient(180deg,transparent 0,transparent 42%,rgba(255,255,255,.86) 60%,var(--bg) 100%)}
       .card{top:68%;left:14px;width:calc(100vw - 28px);padding:20px 19px 23px;background:var(--card-bg)}
       .card[data-step="7"]{top:20%}
       .card p{font-size:clamp(19px,5.25vw,23px);line-height:1.37}
@@ -293,9 +295,9 @@
       <svg id="viz" role="img" aria-label="World map and comparison matrix of electoral safeguards">
         <defs>
           <radialGradient id="bdHalo" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#9b4641" stop-opacity="0.62"/>
-            <stop offset="45%" stop-color="#9b4641" stop-opacity="0.20"/>
-            <stop offset="100%" stop-color="#9b4641" stop-opacity="0"/>
+            <stop offset="0%" stop-color="#b94f62" stop-opacity="0.62"/>
+            <stop offset="45%" stop-color="#b94f62" stop-opacity="0.20"/>
+            <stop offset="100%" stop-color="#b94f62" stop-opacity="0"/>
           </radialGradient>
         </defs>
       </svg>
@@ -552,9 +554,9 @@
   const hasSecondChamber = d => toBool(d.upper_house);
 
   const CORRECTIVES = [
-    {key:'prop', label:'Proportional seats', short:'PR seats', color:'var(--pr)', test:d=>d.c_prop},
-    {key:'pres', label:'Directly elected president', short:'President', color:'var(--pres)', test:d=>d.c_pres},
-    {key:'second', label:'Second chamber', short:'2nd chamber', color:'var(--second)', test:d=>d.c_second}
+    {key:'prop', label:'Proportional seats', short:'PR seats', color:'var(--pr)', ink:'var(--pr-ink)', test:d=>d.c_prop},
+    {key:'pres', label:'Directly elected president', short:'President', color:'var(--pres)', ink:'var(--pres-ink)', test:d=>d.c_pres},
+    {key:'second', label:'Second chamber', short:'2nd chamber', color:'var(--second)', ink:'var(--second-ink)', test:d=>d.c_second}
   ];
 
   const fhColor = fh => { const v=normFH(fh);
@@ -1023,7 +1025,7 @@
 
     gMx.selectAll('text.colhead')
       .style('opacity',inMatrix?1:0)
-      .style('fill',d=>d.color);
+      .style('fill',d=>d.ink);
 
     gMx.selectAll('rect.bd-band').style('opacity',isFinal ? .3 : 0);
     gMx.selectAll('g.row').attr('tabindex',inMatrix?0:null).attr('aria-hidden',inMatrix?null:'true');

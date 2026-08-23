@@ -16,21 +16,21 @@
 
     :root{
       color-scheme:light;
-      --bg:#ffffff; --bg-raised:#f8fcff; --ink:#0b0c0d; --body:#222222;
-      --muted:#637882; --faint:#637882; --line:#aebec7; --card-bg:#f0f6f9;
-      --accent:#1691b9;
-      --free:#4094c1; --partly:#d6a14a; --notfree:#d26f6d;
-      --pr:#137fa7; --pr-ink:#075b78; --pres:#d1932d; --pres-ink:#7a5a17;
-      --second:#8065aa; --second-ink:#5a3a7a; --bd:#b94f62;
-      --has-any:#7794a3; --comparison:#5f8294; --remainder:#337fa6;
-      --map-base:#c3d3db; --dark-fill:#e3ebef; --unmapped:#f2f6f8;
-      --dim:#c6d3d9; --step-scroll:2.6;
-      --paper:#ffffff; --paper-ink:#0b0c0d; --paper-body:#222222;
-      --paper-muted:#637882; --paper-soft:#f0f6f9; --paper-rule:#b8c8d0;
-      --party-bnp:#005f8f; --party-jamaat:#377b69; --party-ncp:#4a91ba;
-      --party-iab:#c27b2c; --party-bkm:#775ca6; --party-if:#b9505e;
-      --party-km:#606870; --party-independent:#35434c; --party-other:#8fa2ac;
-      --no-majority:#d09a3c;
+      --bg:#ffffff; --bg-raised:#f8f8f8; --ink:#1c1c1c; --body:#262626;
+      --muted:#545454; --faint:#767676; --line:#262626; --card-bg:#f2f7ff;
+      --accent:#0068ff;
+      --free:#0064fa; --partly:#c48600; --notfree:#f05143;
+      --pr:#0064fa; --pr-ink:#00378e; --pres:#ff6200; --pres-ink:#573b06;
+      --second:#4f4fff; --second-ink:#2800d7; --bd:#e51503; --bd-ink:#b20e01;
+      --has-any:#0a8059; --comparison:#3d89fb; --remainder:#545454;
+      --map-base:#d4e5ff; --dark-fill:#767676; --unmapped:#efefef;
+      --dim:#b3b3b3; --step-scroll:2.6;
+      --paper:#ffffff; --paper-ink:#1c1c1c; --paper-body:#262626;
+      --paper-muted:#545454; --paper-soft:#f8f8f8; --paper-rule:#cccccc;
+      --party-bnp:#b20e01; --party-jamaat:#146917; --party-ncp:#0064fa;
+      --party-iab:#c48600; --party-bkm:#4f4fff; --party-if:#f05143;
+      --party-km:#545454; --party-independent:#262626; --party-other:#b3b3b3;
+      --no-majority:#c48600;
       --font-display:"museo-sans",Arial,sans-serif;
       --font-body:"utopia-std",Georgia,serif;
       --font-mono:"IBM Plex Mono",ui-monospace,monospace;
@@ -58,7 +58,7 @@
       visibility:hidden;opacity:0;background:var(--card-bg);padding:27px 29px 30px}
     .card p{margin:0;color:var(--body);font-family:var(--font-body);font-size:clamp(22px,1.95vw,29px);
       font-weight:400;letter-spacing:-.014em;line-height:1.34;text-wrap:pretty}
-    .card .n{color:var(--bd);font-family:var(--font-mono);font-size:.78em;font-weight:500;
+    .card .n{color:var(--bd-ink);font-family:var(--font-mono);font-size:.78em;font-weight:500;
       font-feature-settings:"tnum" 1}
 
     .cue{position:absolute;left:clamp(24px,5vw,80px);bottom:24px;z-index:8;display:flex;
@@ -112,7 +112,7 @@
     #viz .bd-ring{transition:r .65s cubic-bezier(.2,.7,.2,1),opacity .5s ease}
     #viz .bd-halo{transform-box:fill-box;transform-origin:center;animation:bdpulse 4.4s ease-in-out infinite}
     @keyframes bdpulse{0%,100%{opacity:.18;transform:scale(1)}50%{opacity:.34;transform:scale(1.08)}}
-    #viz .bd-label{font-family:var(--font-display);fill:var(--bd);font-weight:700;
+    #viz .bd-label{font-family:var(--font-display);fill:var(--bd-ink);font-weight:700;
       paint-order:stroke;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round}
     #viz .rowname,#viz .colhead,#viz .dot,#viz .bd-no,#viz .bd-band{transition:opacity .6s ease,fill .55s ease}
     #viz .row:focus{outline:none}#viz .row:focus .rowname{fill:var(--ink)!important;opacity:1!important}
@@ -139,7 +139,7 @@
     .story-head.is-preparing .story-head-inner{opacity:0;transform:translateY(38px);
       transition:opacity 1.15s cubic-bezier(.2,.7,.2,1),transform 1.35s cubic-bezier(.2,.7,.2,1)}
     .story-head.is-preparing.is-visible .story-head-inner{opacity:1;transform:translateY(0)}
-    .story-category{margin:0 0 25px;color:var(--bd);font:500 11px/1.2 var(--font-mono);
+    .story-category{margin:0 0 25px;color:var(--bd-ink);font:500 11px/1.2 var(--font-mono);
       letter-spacing:.16em;text-transform:uppercase}
     .story-title{max-width:1040px;margin:0;color:var(--ink);font:600 clamp(44px,6.4vw,84px)/1.025 var(--font-body);
       letter-spacing:-.045em;text-wrap:balance}
@@ -303,9 +303,9 @@
       <svg id="viz" role="img" aria-label="World map and comparison matrix of electoral safeguards">
         <defs>
           <radialGradient id="bdHalo" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#b94f62" stop-opacity="0.62"/>
-            <stop offset="45%" stop-color="#b94f62" stop-opacity="0.20"/>
-            <stop offset="100%" stop-color="#b94f62" stop-opacity="0"/>
+            <stop offset="0%" stop-color="#e51503" stop-opacity="0.62"/>
+            <stop offset="45%" stop-color="#e51503" stop-opacity="0.20"/>
+            <stop offset="100%" stop-color="#e51503" stop-opacity="0"/>
           </radialGradient>
         </defs>
       </svg>
@@ -976,7 +976,7 @@
         .attr('font-family','var(--font-mono)')
         .attr('font-size',Math.max(7.5,Math.min(9.5,mx.rowH*0.68)))
         .attr('font-weight',600)
-        .attr('fill','var(--bd)').style('pointer-events','none')
+        .attr('fill','var(--bd-ink)').style('pointer-events','none')
         .style('opacity',0).text('NO');
     });
 
@@ -1115,7 +1115,7 @@
         if(!inMatrix) return 0;
         return 1;
       })
-      .style('fill',d=>d.isBD?'var(--bd)':'var(--muted)');
+      .style('fill',d=>d.isBD?'var(--bd-ink)':'var(--muted)');
 
     gMx.selectAll('circle.dot').style('opacity',function(d){
       if(!inMatrix) return 0;
@@ -1129,7 +1129,7 @@
       .style('opacity',inMatrix?1:0)
       .style('fill',d=>d.ink);
 
-    gMx.selectAll('rect.bd-band').style('opacity',isFinal ? .3 : 0);
+    gMx.selectAll('rect.bd-band').style('opacity',isFinal ? .18 : 0);
     gMx.selectAll('g.row').attr('tabindex',inMatrix?0:null).attr('aria-hidden',inMatrix?null:'true');
     gMx.style('pointer-events', inMatrix?'auto':'none');
 

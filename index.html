@@ -39,7 +39,7 @@
     html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);
       -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     *{box-sizing:border-box}
-    .scrolly{position:relative;height:2112vh}
+    .scrolly{position:relative;height:3120vh}
     .viz-failed .scrolly{height:100vh!important}
     .viz-failed .card[data-step="0"]{visibility:visible!important;opacity:1!important;transform:translateY(-50%)!important}
     .viz-failed .cue,.viz-failed .progress{display:none}
@@ -97,10 +97,17 @@
       letter-spacing:.12em;text-transform:uppercase}
 
     #viz .unit{transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .55s ease}
-    #viz .geo{transition:opacity .75s ease}
+    #viz .geo{transition:opacity .75s ease;will-change:transform}
     #viz .geo path{stroke:var(--line);stroke-width:.55;transition:fill .72s cubic-bezier(.2,.7,.2,1),
-      fill-opacity .55s ease,stroke .18s ease,stroke-width .18s ease}
+      fill-opacity .55s ease,opacity .55s ease,stroke .18s ease,stroke-width .18s ease;
+      vector-effect:non-scaling-stroke}
     #viz .geo path.is-hovered,#viz .geo path:focus{outline:none;stroke:var(--ink);stroke-width:1.2}
+    #viz .geo path.is-example-country{stroke:var(--ink);stroke-width:1.8}
+    #viz .example-mark{pointer-events:none}
+    #viz .example-country{font-family:var(--font-display);fill:var(--ink);font-size:20px;font-weight:700;
+      paint-order:stroke;stroke:var(--bg);stroke-width:5px;stroke-linejoin:round}
+    #viz .example-kind{font-family:var(--font-mono);fill:var(--muted);font-size:9.5px;font-weight:500;
+      letter-spacing:.12em;text-transform:uppercase;paint-order:stroke;stroke:var(--bg);stroke-width:4px}
     #viz .bdmark{pointer-events:none;transition:opacity .7s ease}
     #viz .bd-ring{transition:r .65s cubic-bezier(.2,.7,.2,1),opacity .5s ease}
     #viz .bd-halo{transform-box:fill-box;transform-origin:center;animation:bdpulse 4.4s ease-in-out infinite}
@@ -149,6 +156,7 @@
       margin:56px 0 12px;color:var(--paper-muted)}
     .body p{font:400 19px/1.65 var(--font-body);margin:0 0 20px;color:var(--paper-body)}
     .body h3~p{font-size:14px;line-height:1.65;color:var(--paper-muted)}
+    .body h3~p a{color:inherit;text-underline-offset:2px}
 
     .prviz-figure{margin:52px 0 68px;width:100%}
     .prviz-wide{width:calc(100% + 220px);margin-left:-110px}
@@ -259,9 +267,9 @@
     @media (max-width:899px){
       .vignette{background:linear-gradient(180deg,transparent 0,transparent 42%,rgba(255,255,255,.86) 60%,var(--bg) 100%)}
       .card{top:68%;left:14px;width:calc(100vw - 28px);padding:20px 19px 23px;background:var(--card-bg)}
-      .card[data-step="7"]{top:20%}
+      .card--matrix{top:20%}
       .card p{font-size:clamp(19px,5.25vw,23px);line-height:1.37}
-      .card[data-step="7"] p{font-size:18px}
+      .card--matrix p{font-size:18px}
       .legend{top:10px;left:12px;right:12px;max-width:none;gap:9px;font-size:9px;padding:7px 0}
       .legend .legend-set{gap:9px}.legend .swatch{width:8px;height:8px}.legend .cap-t{font-size:8.5px}
       .tally{top:88px;left:auto;right:16px;text-align:right}
@@ -275,7 +283,7 @@
       .story-title{font-size:clamp(34px,5.6vw,48px);line-height:1.035;letter-spacing:-.034em}
       .story-byline{margin-top:20px;font-size:12px}
     }
-    @media (max-height:450px){.card[data-step="7"]{top:26%}.card[data-step="7"] p{font-size:13px;line-height:1.32}}
+    @media (max-height:450px){.card--matrix{top:26%}.card--matrix p{font-size:13px;line-height:1.32}}
     @media (prefers-reduced-motion:reduce){
       #viz .unit,#viz .geo,#viz .geo path,#viz .bdmark,#viz .bd-ring,
       #viz .rowname,#viz .colhead,#viz .dot,#viz .bd-no,#viz .bd-band,.vignette{transition:none}
@@ -344,23 +352,35 @@
         </div>
 
         <div class="card" data-step="3">
-          <p>Start inside parliament. <span class="n" id="count-pr">32</span> elect all or some lower-house seats through proportional rules. <span class="n" id="count-after-pr">15</span> still have no PR component.</p>
+          <p>Start inside parliament. <span class="n" id="count-pr">32</span> elect all or some lower-house seats through proportional rules. Set them aside. <span class="n" id="count-after-pr">15</span> still have no proportional component.</p>
         </div>
 
         <div class="card" data-step="4">
-          <p>Of those 15, <span class="n" id="count-pres-next">9</span> directly elect a president. The office's power varies, but its mandate comes from voters, not parliament. <span class="n" id="count-after-pres">6</span> remain.</p>
+          <p>Take Peru. Its <span class="n">130</span> deputies are elected proportionally across <span class="n">27</span> districts. Voters choose a party list and may name preferred candidates; seats are divided among lists rather than handed to one district winner.</p>
         </div>
 
         <div class="card" data-step="5">
-          <p>Of those six, <span class="n" id="count-second-next">5</span> have a second chamber. Its power may range from review and delay to veto. <span class="n" id="count-after-second">1</span> remains.</p>
+          <p>Back across the comparison: of the 15 countries left, <span class="n" id="count-pres-next">9</span> directly elect a president. The office's power varies, but its mandate comes from voters, not parliament. <span class="n" id="count-after-pres">6</span> remain.</p>
         </div>
 
         <div class="card" data-step="6">
-          <p><span class="n" id="count-any">46</span> have at least one of these arrangements. The last is Bangladesh: its general seats use FPTP, its president is not separately elected and it has no second chamber. <span class="n">Zero of three.</span></p>
+          <p>Ghana shows what that separation means. Its MPs are elected one per constituency by FPTP. Voters separately choose the executive president nationwide; a winner needs more than <span class="n">50%</span>, or the top two face a runoff.</p>
         </div>
 
         <div class="card" data-step="7">
-          <p>The table restores the overlaps: a country may have more than one safeguard. In this 47-country comparison, Bangladesh alone has three NOs.</p>
+          <p>Six countries remain without proportional lower-house seats or a directly elected president. <span class="n" id="count-second-next">5</span> have a second chamber, where legislation can be revised, delayed or stopped. <span class="n" id="count-after-second">1</span> remains.</p>
+        </div>
+
+        <div class="card" data-step="8">
+          <p>Take Australia. Every state elects <span class="n">12</span> senators regardless of population; each mainland territory elects two. All bills need both houses, and the Senate can amend or reject most legislation—and refuse any bill.</p>
+        </div>
+
+        <div class="card" data-step="9">
+          <p>Across the full comparison, <span class="n" id="count-any">46</span> have at least one of these arrangements. The last is Bangladesh: its general seats use FPTP, its president is not separately elected and it has no second chamber. <span class="n">Zero of three.</span></p>
+        </div>
+
+        <div class="card card--matrix" data-step="10">
+          <p>The matrix restores the overlaps: a country may have more than one safeguard. In this 47-country comparison, Bangladesh alone has three NOs.</p>
         </div>
       </div>
 
@@ -519,6 +539,7 @@
 
     <h3>Notes on the opening comparison</h3>
     <p>Electoral system classifications follow the International IDEA taxonomy. A country is counted as having <em>proportional seats</em> if its lower house uses List PR, MMP, a parallel system or STV; a <em>separate national mandate</em> if its head of state is directly elected by any method; and a <em>second chamber</em> if its legislature has an upper house. Second chambers vary widely: some represent territories, while others primarily scrutinise and revise legislation.</p>
+    <p>The country examples use official institutional sources: Peru’s <a href="https://www.onpe.gob.pe/modMarco-Legal/POE-EG-2026-V03.pdf">2026 electoral plan</a> and <a href="https://eg2026.onpe.gob.pe/bicameralidad/">bicameral guide</a>, the <a href="https://ec.gov.gh/electoral-system/">Electoral Commission of Ghana</a>, and the <a href="https://www.aph.gov.au/About_Parliament/Senate/About_the_Senate">Parliament of Australia</a>.</p>
     <p>Population and Freedom House ratings in the underlying file date from 2009 and should be refreshed before publication. The outlier finding is specific to this 47-country comparison, not every country in the world: Papua New Guinea and several microstates fall below the population threshold and also lack all three arrangements.</p>
     <p>Bangladesh’s lower house is not purely first-past-the-post. Fifty seats are reserved for women and allocated in proportion to party strength — a partial corrective inside the chamber, but one that cannot alter which party controls it.</p>
   </article>
@@ -568,26 +589,40 @@
   const passPop = d => d.pop >= 10_000_000;
   const passFH  = d => normFH(d.fh) !== 'not free';
 
-  const FILTERS = [0,2,2,2,2,2,2,2];
-  const MATRIX_FROM = 7;
-  const BD_REVEAL = 6;
-  const N = 8;
+  const STEPS = [
+    {kind:'fh',filters:0},
+    {kind:'comparison',filters:2},
+    {kind:'sieve',filters:2,depth:-1},
+    {kind:'sieve',filters:2,depth:0},
+    {kind:'example',filters:2,depth:0,country:'Peru',key:'prop',caption:'Lower-house PR',maxScale:8},
+    {kind:'sieve',filters:2,depth:1},
+    {kind:'example',filters:2,depth:1,country:'Ghana',key:'pres',caption:'Elected executive president',maxScale:12},
+    {kind:'sieve',filters:2,depth:2},
+    {kind:'example',filters:2,depth:2,country:'Australia',key:'second',caption:'Territorial second chamber',maxScale:4},
+    {kind:'reveal',filters:2,depth:3},
+    {kind:'matrix',filters:2}
+  ];
+  const N = STEPS.length;
 
   const svg   = d3.select('#viz');
   const gGeo  = svg.append('g').attr('class','geo');
+  const gExample = svg.append('g').attr('class','example-mark').style('opacity',0);
   const gBD   = svg.append('g').attr('class','bdmark');
   const gGrid = svg.append('g');
   const gMx   = svg.append('g');
   const tip   = d3.select('#tip');
   const vignetteEl = document.querySelector('.vignette');
 
-  const state = { data:[], pool:[], stats:null, step:-1, W:0, H:0, world:null, hasGeo:false, dotR:5, bdC:null };
+  const state = { data:[], pool:[], stats:null, step:-1, W:0, H:0, world:null,
+    hasGeo:false, dotR:5, bdC:null, geoPath:null, geoByName:new Map() };
   svg.on('click.dismiss',()=>{hideTip();blurMapFocus();});
 
   function canExplore(d){
     const step=clamp(state.step,0,N-1);
-    const nFilters=FILTERS[step] ?? 0;
-    return (nFilters<1||passPop(d)) && (nFilters<2||passFH(d));
+    const spec=STEPS[step];
+    const nFilters=spec.filters ?? 0;
+    const inScope=(nFilters<1||passPop(d)) && (nFilters<2||passFH(d));
+    return inScope && (spec.kind!=='example'||normName(d.name)===normName(spec.country));
   }
 
   function blurMapFocus(){
@@ -702,7 +737,7 @@
     const short=h<450;
     const blockCount=short ? 3 : (narrow || h<680) ? 2 : 1;
     const rowsPerBlock=Math.ceil(n/blockCount);
-    const finalCard=document.querySelector('.card[data-step="7"]');
+    const finalCard=document.querySelector('.card--matrix');
     const cardBottom=narrow&&finalCard
       ? h*(short?.18:.20)+finalCard.offsetHeight/2 : 0;
     const top=short?Math.max(115,cardBottom+42):
@@ -734,9 +769,10 @@
 
   // Choropleth + centroids + Bangladesh glow
   function computeGeo(){
-    state.hasGeo=false; state.bdC=null;
+    state.hasGeo=false; state.bdC=null; state.geoPath=null; state.geoByName=new Map();
     state.dotR=Math.max(3.5, Math.min(6.5, state.W/150));
-    gGeo.selectAll('*').remove();
+    gGeo.interrupt().attr('transform',null).selectAll('*').remove();
+    gExample.interrupt().style('opacity',0).selectAll('*').remove();
     gBD.selectAll('*').remove();
     if(!state.world) return;
 
@@ -747,6 +783,8 @@
     const proj=d3.geoNaturalEarth1()
       .fitExtent([[left,top],[right,state.H-24]], {type:'Sphere'});
     const path=d3.geoPath(proj);
+    state.geoPath=path;
+    state.geoByName=new Map(state.world.map(f=>[f._name,f]));
 
     const recByName=new Map();
     state.data.forEach(d=>{ recByName.set(normName(d.name), d); });
@@ -805,6 +843,63 @@
         .attr('text-anchor',mobile?'end':'start')
         .attr('font-size',14).text('Bangladesh');
     }
+  }
+
+  function clearExampleFocus(){
+    const duration=reduceMotion?0:820;
+    gGeo.interrupt().transition().duration(duration).ease(d3.easeCubicInOut)
+      .attr('transform','translate(0,0) scale(1)');
+    gGeo.selectAll('path').classed('is-example-country',false).style('opacity',1);
+    if(reduceMotion){
+      gExample.interrupt().style('opacity',0).selectAll('*').remove();
+    } else {
+      gExample.interrupt().transition().duration(260).style('opacity',0)
+        .on('end',()=>gExample.selectAll('*').remove());
+    }
+  }
+
+  function focusExample(spec){
+    const target=normName(spec.country);
+    const feature=state.geoByName.get(target);
+    if(!feature||!state.geoPath){ clearExampleFocus(); return; }
+
+    const bounds=state.geoPath.bounds(feature);
+    const countryW=Math.max(1,bounds[1][0]-bounds[0][0]);
+    const countryH=Math.max(1,bounds[1][1]-bounds[0][1]);
+    const mobile=state.W<900;
+    const frame={
+      x0:mobile?state.W*.04:state.W*.48,
+      x1:mobile?state.W*.96:state.W*.96,
+      y0:mobile?Math.max(112,state.H*.14):state.H*.18,
+      y1:mobile?state.H*.55:state.H*.90
+    };
+    const scale=Math.max(1,Math.min(spec.maxScale||10,
+      (frame.x1-frame.x0)/countryW,(frame.y1-frame.y0)/countryH));
+    const countryX=(bounds[0][0]+bounds[1][0])/2;
+    const countryY=(bounds[0][1]+bounds[1][1])/2;
+    const focusX=(frame.x0+frame.x1)/2;
+    const focusY=(frame.y0+frame.y1)/2;
+    const duration=reduceMotion?0:980;
+
+    gGeo.interrupt().transition().duration(duration).ease(d3.easeCubicInOut)
+      .attr('transform',`translate(${focusX},${focusY}) scale(${scale}) translate(${-countryX},${-countryY})`);
+    gGeo.selectAll('path')
+      .classed('is-example-country',f=>f._name===target)
+      .style('opacity',f=>f._name===target?1:.24);
+
+    gExample.interrupt().selectAll('*').remove();
+    const labelY=mobile?Math.max(74,state.H*.085):Math.max(82,state.H*.105);
+    gExample.append('text').attr('class','example-country')
+      .attr('x',focusX).attr('y',labelY).attr('text-anchor','middle').text(spec.country);
+    gExample.append('text').attr('class','example-kind')
+      .attr('x',focusX).attr('y',labelY+19).attr('text-anchor','middle').text(spec.caption);
+    gExample.style('opacity',reduceMotion?1:0).transition().delay(reduceMotion?0:460)
+      .duration(reduceMotion?0:420).style('opacity',1);
+  }
+
+  function updateMapFocus(spec){
+    if(spec.kind==='example') focusExample(spec);
+    else clearExampleFocus();
   }
 
   // ---------- build ----------
@@ -891,17 +986,18 @@
 
   // ---------- per-step painting ----------
   function sieveVisual(d,step){
-    if(step===0) return {fill:fhColor(d.fh),opacity:1};
-    if(step===1) return {fill:'var(--comparison)',opacity:1};
-    if(step===2) return {fill:'var(--remainder)',opacity:1};
-    if(step>=3 && step<=5){
-      const depth=step-3;
+    const spec=STEPS[step];
+    if(spec.kind==='fh') return {fill:fhColor(d.fh),opacity:1};
+    if(spec.kind==='comparison') return {fill:'var(--comparison)',opacity:1};
+    if(spec.kind==='sieve'&&spec.depth===-1) return {fill:'var(--remainder)',opacity:1};
+    if((spec.kind==='sieve'||spec.kind==='example')&&spec.depth>=0&&spec.depth<=2){
+      const depth=spec.depth;
       if(d.sieve_exit<=depth){
         return {fill:CORRECTIVES[d.sieve_exit].color,opacity:d.sieve_exit===depth?1:.82};
       }
       return {fill:'var(--remainder)',opacity:1};
     }
-    if(step===BD_REVEAL){
+    if(spec.kind==='reveal'){
       if(d.sieve_exit===3) return {fill:'var(--bd)',opacity:1};
       return {fill:CORRECTIVES[d.sieve_exit].color,opacity:.7};
     }
@@ -909,27 +1005,29 @@
   }
 
   function sieveAria(d,step){
-    if(step<=1) return d.name;
-    if(step===2) return `${d.name} — enters the three-safeguard sieve`;
-    if(step>=3 && step<=5){
-      const depth=step-3;
+    const spec=STEPS[step];
+    if(spec.kind==='fh'||spec.kind==='comparison') return d.name;
+    if(spec.kind==='sieve'&&spec.depth===-1) return `${d.name} — enters the three-safeguard sieve`;
+    if((spec.kind==='sieve'||spec.kind==='example')&&spec.depth>=0&&spec.depth<=2){
+      const depth=spec.depth;
       if(d.sieve_exit<=depth) return `${d.name} — first safeguard found: ${CORRECTIVES[d.sieve_exit].label}`;
       return `${d.name} — still in after the ${CORRECTIVES[depth].label} check`;
     }
-    if(step===BD_REVEAL && d.sieve_exit===3) return `${d.name} — final remaining country, none of the three safeguards`;
-    if(step===BD_REVEAL) return `${d.name} — first safeguard found: ${CORRECTIVES[d.sieve_exit].label}`;
+    if(spec.kind==='reveal'&&d.sieve_exit===3) return `${d.name} — final remaining country, none of the three safeguards`;
+    if(spec.kind==='reveal') return `${d.name} — first safeguard found: ${CORRECTIVES[d.sieve_exit].label}`;
     return d.name;
   }
 
   function sieveStatus(d,step){
-    if(step===2) return 'Enters the three-safeguard sieve';
-    if(step>=3 && step<=5){
-      const depth=step-3;
+    const spec=STEPS[step];
+    if(spec.kind==='sieve'&&spec.depth===-1) return 'Enters the three-safeguard sieve';
+    if((spec.kind==='sieve'||spec.kind==='example')&&spec.depth>=0&&spec.depth<=2){
+      const depth=spec.depth;
       if(d.sieve_exit<=depth) return `First safeguard found: ${CORRECTIVES[d.sieve_exit].label}`;
       return `Still in after the ${CORRECTIVES[depth].label} check`;
     }
-    if(step===BD_REVEAL && d.sieve_exit===3) return 'Final remaining country: none of the three';
-    if(step===BD_REVEAL) return `First safeguard found: ${CORRECTIVES[d.sieve_exit].label}`;
+    if(spec.kind==='reveal'&&d.sieve_exit===3) return 'Final remaining country: none of the three';
+    if(spec.kind==='reveal') return `First safeguard found: ${CORRECTIVES[d.sieve_exit].label}`;
     return '';
   }
 
@@ -939,9 +1037,11 @@
     hideTip();
     state.step=step;
 
-    const nFilters=FILTERS[step];
-    const inMatrix=step>=MATRIX_FROM;
-    const isFinal=step===N-1;
+    const spec=STEPS[step];
+    const nFilters=spec.filters ?? 0;
+    const inMatrix=spec.kind==='matrix';
+    const isFinal=inMatrix;
+    const exampleTarget=spec.kind==='example'?normName(spec.country):'';
     const grid=state.grid, mx=state.mx;
     const alive=d=>(nFilters<1||passPop(d)) && (nFilters<2||passFH(d));
     const poolIdx = new Map(state.pool.map((d,i)=>[d,i]));
@@ -984,11 +1084,11 @@
         .style('pointer-events', mapPhase ? 'auto' : 'none');
     if(state.hasGeo){
       gGeo.selectAll('path')
-        .attr('tabindex',f=>mapPhase&&f._rec&&alive(f._rec)?0:null)
+        .attr('tabindex',f=>mapPhase&&f._rec&&alive(f._rec)&&(!exampleTarget||f._name===exampleTarget)?0:null)
         .attr('aria-hidden',mapPhase?null:'true')
-        .attr('aria-disabled',f=>f._rec&&!alive(f._rec)?'true':null)
+        .attr('aria-disabled',f=>f._rec&&(!alive(f._rec)||(exampleTarget&&f._name!==exampleTarget))?'true':null)
         .attr('aria-label',f=>f._rec?sieveAria(f._rec,step):null)
-        .style('cursor',f=>f._rec&&alive(f._rec)?'pointer':'default')
+        .style('cursor',f=>f._rec&&alive(f._rec)&&(!exampleTarget||f._name===exampleTarget)?'pointer':'default')
         .style('fill',function(f){
           const r=f._rec;
           if(!r) return 'var(--unmapped)';
@@ -1002,7 +1102,9 @@
         });
     }
 
-    const revealBD=mapPhase && step===BD_REVEAL;
+    updateMapFocus(spec);
+
+    const revealBD=mapPhase && spec.kind==='reveal';
     gBD.style('opacity',revealBD?1:0);
     gBD.select('.bd-ring').attr('r',revealBD?18:12);
     gBD.select('.bd-label').attr('font-size',revealBD?17:14);
@@ -1032,43 +1134,43 @@
     gMx.style('pointer-events', inMatrix?'auto':'none');
 
     // ----- legend semantics: exclusive sieve buckets on the map, actual attributes in the matrix -----
-    const fhMode=step===0;
-    const filterMode=step===1;
-    const safeguardMode=step>=2;
+    const fhMode=spec.kind==='fh';
+    const filterMode=spec.kind==='comparison';
+    const safeguardMode=!fhMode&&!filterMode;
+    const depth=Number.isFinite(spec.depth)?spec.depth:-1;
     const stats=state.stats;
     document.getElementById('legend-title').textContent = fhMode?'Freedom House':
-      filterMode?'Comparison set':isFinal?'Safeguards present':step===2?'Sieve begins':'First safeguard found';
+      filterMode?'Comparison set':isFinal?'Safeguards present':spec.kind==='example'?`Example · ${spec.country}`:
+      depth===-1?'Sieve begins':'First safeguard found';
     document.getElementById('legend-fh').hidden = !fhMode;
     document.getElementById('legend-filter').hidden = !filterMode;
     document.getElementById('legend-safeguards').hidden = !safeguardMode;
 
-    document.getElementById('legend-prop').hidden = step<3;
-    document.getElementById('legend-pres').hidden = step<4;
-    document.getElementById('legend-second').hidden = step<5;
-    document.getElementById('legend-remainder').hidden = step>=BD_REVEAL;
-    document.getElementById('legend-none').hidden = step<BD_REVEAL;
+    document.getElementById('legend-prop').hidden = depth<0&&!isFinal;
+    document.getElementById('legend-pres').hidden = depth<1&&!isFinal;
+    document.getElementById('legend-second').hidden = depth<2&&!isFinal;
+    document.getElementById('legend-remainder').hidden = spec.kind==='reveal'||isFinal;
+    document.getElementById('legend-none').hidden = spec.kind!=='reveal'&&!isFinal;
     const compactFinal=isFinal&&state.W<600;
     document.getElementById('legend-prop-text').textContent = isFinal?(compactFinal?'PR seats':'Proportional seats'):`PR · ${stats.buckets[0]}`;
     document.getElementById('legend-pres-text').textContent = isFinal?(compactFinal?'President':'Directly elected president'):`President adds · ${stats.buckets[1]}`;
     document.getElementById('legend-second-text').textContent = isFinal?(compactFinal?'2nd chamber':'Second chamber'):`Second chamber adds · ${stats.buckets[2]}`;
     document.getElementById('legend-none-text').textContent = compactFinal?'None · 1':'None of the three · 1';
-    const remainingByStep={2:stats.pool,3:stats.afterPR,4:stats.afterPres,5:stats.afterSecond};
-    document.getElementById('legend-remainder-text').textContent=`Still in · ${remainingByStep[step]??stats.afterSecond}`;
+    const remainingByDepth={[-1]:stats.pool,0:stats.afterPR,1:stats.afterPres,2:stats.afterSecond};
+    document.getElementById('legend-remainder-text').textContent=`Still in · ${remainingByDepth[depth]??stats.afterSecond}`;
     document.querySelectorAll('.safeguard-item').forEach((el,i)=>{
-      const active=isFinal || i<=step-3;
+      const active=isFinal || i<=depth;
       el.classList.toggle('is-active',active);
       el.classList.remove('is-hover-match','is-hover-off');
     });
 
-    const tallies={
-      1:[stats.pool,'In the comparison'],
-      2:[stats.pool,'Enter the sieve'],
-      3:[stats.afterPR,'Without PR'],
-      4:[stats.afterPres,'Still uncovered'],
-      5:[stats.afterSecond,'Still uncovered'],
-      6:['0 / 3','Bangladesh']
-    };
-    const tally=tallies[step];
+    let tally=null;
+    if(spec.kind==='comparison') tally=[stats.pool,'In the comparison'];
+    else if(spec.kind==='sieve'&&depth===-1) tally=[stats.pool,'Enter the sieve'];
+    else if(spec.kind==='sieve'&&depth===0) tally=[stats.afterPR,'Without PR'];
+    else if(spec.kind==='sieve'&&depth===1) tally=[stats.afterPres,'Still uncovered'];
+    else if(spec.kind==='sieve'&&depth===2) tally=[stats.afterSecond,'Still uncovered'];
+    else if(spec.kind==='reveal') tally=['0 / 3','Bangladesh'];
     document.getElementById('tally').classList.toggle('is-visible',!!tally);
     if(tally){
       document.getElementById('tally-number').textContent=tally[0];
@@ -1176,14 +1278,15 @@
   }
   function syncLegendHover(d){
     const on={prop:d.c_prop,pres:d.c_pres,second:d.c_second};
-    const mapSieve=state.step>=2&&state.step<MATRIX_FROM;
-    const depth=state.step>=3&&state.step<=5?state.step-3:-1;
+    const spec=STEPS[state.step];
+    const mapSieve=spec.kind==='sieve'||spec.kind==='example'||spec.kind==='reveal';
+    const depth=Number.isFinite(spec.depth)?spec.depth:-1;
     document.querySelectorAll('.sieve-item').forEach(el=>{
       const key=el.dataset.key;
       let match=false;
       if(mapSieve){
-        if(key==='remainder') match=state.step<=5&&d.sieve_exit>depth;
-        else if(key==='none') match=state.step>=BD_REVEAL&&d.sieve_exit===3;
+        if(key==='remainder') match=spec.kind!=='reveal'&&d.sieve_exit>depth;
+        else if(key==='none') match=spec.kind==='reveal'&&d.sieve_exit===3;
         else match=d.sieve_exit===CORRECTIVES.findIndex(c=>c.key===key);
       } else {
         if(key==='none') match=d.n_corr===0;

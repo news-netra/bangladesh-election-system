@@ -97,7 +97,7 @@
       letter-spacing:.12em;text-transform:uppercase}
 
     #viz .unit{transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .55s ease}
-    #viz .geo{transition:opacity .75s ease;will-change:transform}
+    #viz .geo{transition:opacity .75s ease}
     #viz .geo path{stroke:var(--line);stroke-width:.55;transition:fill .72s cubic-bezier(.2,.7,.2,1),
       fill-opacity .55s ease,opacity .55s ease,stroke .18s ease,stroke-width .18s ease;
       vector-effect:non-scaling-stroke}
@@ -614,10 +614,15 @@
   const vignetteEl = document.querySelector('.vignette');
 
   const state = { data:[], pool:[], stats:null, step:-1, W:0, H:0, world:null,
-    hasGeo:false, dotR:5, bdC:null, geoPath:null, geoByName:new Map() };
+    hasGeo:false, dotR:5, bdC:null, geoPath:null, geoByName:new Map(),
+    mapTransitioning:false, mapTransitionId:0, mapHoverArmed:true };
   svg.on('click.dismiss',()=>{hideTip();blurMapFocus();});
+  svg.on('mousemove.arm-hover',()=>{
+    if(!state.mapTransitioning) state.mapHoverArmed=true;
+  });
 
   function canExplore(d){
+    if(state.mapTransitioning) return false;
     const step=clamp(state.step,0,N-1);
     const spec=STEPS[step];
     const nFilters=spec.filters ?? 0;
@@ -625,9 +630,37 @@
     return inScope && (spec.kind!=='example'||normName(d.name)===normName(spec.country));
   }
 
+  function canHover(d){ return state.mapHoverArmed && canExplore(d); }
+
   function blurMapFocus(){
     const active=document.activeElement;
     if(active && active.matches && active.matches('#viz .geo path')) active.blur();
+  }
+
+  function transitionMap(transform,duration){
+    const id=++state.mapTransitionId;
+    state.mapTransitioning=true;
+    state.mapHoverArmed=false;
+    hideTip();
+    blurMapFocus();
+    gGeo.interrupt().style('pointer-events','none');
+
+    const finish=()=>{
+      if(id!==state.mapTransitionId) return;
+      state.mapTransitioning=false;
+      const spec=STEPS[state.step];
+      const interactive=state.hasGeo && spec && spec.kind!=='matrix';
+      gGeo.style('pointer-events',interactive?'auto':'none');
+    };
+
+    if(duration<=0){
+      gGeo.attr('transform',transform);
+      finish();
+      return;
+    }
+    gGeo.transition().duration(duration).ease(d3.easeCubicInOut)
+      .attr('transform',transform)
+      .on('end.map-focus interrupt.map-focus cancel.map-focus',finish);
   }
 
   const NAME_ALIAS = {
@@ -803,11 +836,15 @@
       .attr('aria-describedby',f=>f._rec?'tip':null)
       .style('cursor',f=>f._rec?'pointer':'default')
       .on('mouseenter',function(e,f){
-        if(!f._rec || !canExplore(f._rec)) return;
+        if(!f._rec || !canHover(f._rec)) return;
         d3.select(this).classed('is-hovered',true);
         showTip(e,f._rec);
       })
-      .on('mousemove',moveTip)
+      .on('mousemove',function(e,f){
+        if(!f._rec || !canHover(f._rec)) return;
+        if(parseFloat(tip.style('opacity'))>0) moveTip(e);
+        else { d3.select(this).classed('is-hovered',true); showTip(e,f._rec); }
+      })
       .on('mouseleave',function(){d3.select(this).classed('is-hovered',false);hideTip();})
       .on('focus',function(e,f){
         if(!f._rec || !canExplore(f._rec)) return;
@@ -847,8 +884,7 @@
 
   function clearExampleFocus(){
     const duration=reduceMotion?0:820;
-    gGeo.interrupt().transition().duration(duration).ease(d3.easeCubicInOut)
-      .attr('transform','translate(0,0) scale(1)');
+    transitionMap('translate(0,0) scale(1)',duration);
     gGeo.selectAll('path').classed('is-example-country',false).style('opacity',1);
     if(reduceMotion){
       gExample.interrupt().style('opacity',0).selectAll('*').remove();
@@ -881,8 +917,7 @@
     const focusY=(frame.y0+frame.y1)/2;
     const duration=reduceMotion?0:980;
 
-    gGeo.interrupt().transition().duration(duration).ease(d3.easeCubicInOut)
-      .attr('transform',`translate(${focusX},${focusY}) scale(${scale}) translate(${-countryX},${-countryY})`);
+    transitionMap(`translate(${focusX},${focusY}) scale(${scale}) translate(${-countryX},${-countryY})`,duration);
     gGeo.selectAll('path')
       .classed('is-example-country',f=>f._name===target)
       .style('opacity',f=>f._name===target?1:.24);
@@ -1081,7 +1116,7 @@
       if(!mapPhase || !f || !f._rec || !alive(f._rec)) focused.blur();
     }
     gGeo.style('opacity', mapPhase ? 1 : 0)
-        .style('pointer-events', mapPhase ? 'auto' : 'none');
+        .style('pointer-events', mapPhase&&!state.mapTransitioning ? 'auto' : 'none');
     if(state.hasGeo){
       gGeo.selectAll('path')
         .attr('tabindex',f=>mapPhase&&f._rec&&alive(f._rec)&&(!exampleTarget||f._name===exampleTarget)?0:null)

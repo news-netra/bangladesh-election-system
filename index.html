@@ -39,7 +39,7 @@
     html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);
       -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     *{box-sizing:border-box}
-    .scrolly{position:relative;height:3120vh}
+    .scrolly{position:relative;height:3380vh}
     .viz-failed .scrolly{height:100vh!important}
     .viz-failed .card[data-step="0"]{visibility:visible!important;opacity:1!important;transform:translateY(-50%)!important}
     .viz-failed .cue,.viz-failed .progress{display:none}
@@ -86,15 +86,6 @@
     .legend .safeguard-item{opacity:.82}.legend .safeguard-item.is-active{opacity:1}
     .legend .sieve-item.is-hover-match{opacity:1;color:var(--ink)}
     .legend .sieve-item.is-hover-off{opacity:.55}
-
-    .tally{position:absolute;top:82px;left:clamp(24px,5vw,80px);z-index:5;pointer-events:none;
-      opacity:0;transform:translateY(7px);transition:opacity .4s ease,transform .4s ease;
-      color:var(--ink);text-align:left}
-    .tally.is-visible{opacity:1;transform:translateY(0)}
-    .tally .number{display:block;font:600 clamp(34px,5vw,66px)/.95 var(--font-mono);
-      letter-spacing:-.055em;font-feature-settings:"tnum" 1}
-    .tally .label{display:block;margin-top:8px;color:var(--muted);font:500 9.5px/1.25 var(--font-mono);
-      letter-spacing:.12em;text-transform:uppercase}
 
     #viz .unit{transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .55s ease}
     #viz .geo{transition:opacity .75s ease}
@@ -287,12 +278,10 @@
       .card--matrix p{font-size:18px}
       .legend{top:10px;left:12px;right:12px;max-width:none;gap:9px;font-size:9px;padding:7px 0}
       .legend .legend-set{gap:9px}.legend .swatch{width:8px;height:8px}.legend .cap-t{font-size:8.5px}
-      .tally{top:88px;left:auto;right:16px;text-align:right}
-      .tally .number{font-size:40px}.tally .label{font-size:8.5px}
       .cue{left:16px;bottom:12px}.tooltip{width:220px}
     }
     @media (max-height:650px){
-      .card{padding-top:16px;padding-bottom:18px}.card p{font-size:16px}.tally{top:72px}.tally .number{font-size:34px}
+      .card{padding-top:16px;padding-bottom:18px}.card p{font-size:16px}
       .story-head{padding:60px 20px 56px}
       .story-category{margin-bottom:14px}
       .story-title{font-size:clamp(34px,5.6vw,48px);line-height:1.035;letter-spacing:-.034em}
@@ -302,7 +291,7 @@
     @media (prefers-reduced-motion:reduce){
       #viz .unit,#viz .geo,#viz .geo path,#viz .bdmark,#viz .bd-ring,
       #viz .rowname,#viz .colhead,#viz .dot,#viz .bd-no,#viz .bd-band,.vignette{transition:none}
-      #viz .bd-halo,.cue svg{animation:none}.tally,.prviz-map path,.prviz-allocation-bar rect{transition:none}
+      #viz .bd-halo,.cue svg{animation:none}.prviz-map path,.prviz-allocation-bar rect{transition:none}
       .story-head-inner{opacity:1;transform:none;transition:none}
     }
   </style>
@@ -348,53 +337,52 @@
         </span>
       </div>
 
-      <div class="tally" id="tally" aria-hidden="true">
-        <span class="number" id="tally-number">47</span>
-        <span class="label" id="tally-label">In the comparison</span>
-      </div>
-
       <div class="cards" id="cards">
         <div class="card" data-step="0">
           <p data-copy-id="BES.opening.card.plurality">Under FPTP, a plurality of votes can become a majority of seats. The larger question is whether that parliamentary majority becomes the only national power that matters.</p>
         </div>
 
         <div class="card" data-step="1">
-          <p data-copy-id="BES.opening.card.comparison-pool">To compare like with like, keep countries with at least <span class="n">10 million</span> people rated Free or Partly Free by Freedom House. <span class="n" id="count-pool">47</span> remain.</p>
+          <p data-copy-id="BES.opening.card.population-cut">First, drop countries with fewer than <span class="n">10 million</span> people. That removes <span class="n" id="count-too-small">116</span>; <span class="n" id="count-population">82</span> remain.</p>
         </div>
 
         <div class="card" data-step="2">
-          <p data-copy-id="BES.opening.card.sieve-intro">Now run the 47 through three institutional arrangements that can disperse power. Once one appears, set that country aside; keep only those without any of the three.</p>
+          <p data-copy-id="BES.opening.card.comparison-pool">Next, drop the <span class="n" id="count-not-free">35</span> countries Freedom House rates Not Free. That leaves <span class="n" id="count-pool">47</span> countries rated Free or Partly Free for comparison.</p>
         </div>
 
         <div class="card" data-step="3">
-          <p data-copy-id="BES.opening.card.proportional">Start inside parliament. <span class="n" id="count-pr">32</span> elect all or some lower-house seats through proportional rules. Set them aside. <span class="n" id="count-after-pr">15</span> still have no proportional component.</p>
+          <p data-copy-id="BES.opening.card.sieve-intro">Now run the 47 through three institutional arrangements that can disperse power. Once one appears, set that country aside; keep only those without any of the three.</p>
         </div>
 
         <div class="card" data-step="4">
-          <p data-copy-id="BES.opening.card.peru">Take Peru. Its <span class="n">130</span> deputies are elected proportionally across <span class="n">27</span> districts. Voters choose a party list and may name preferred candidates; seats are divided among lists rather than handed to one district winner.</p>
+          <p data-copy-id="BES.opening.card.proportional">Start inside parliament. <span class="n" id="count-pr">32</span> elect all or some lower-house seats through proportional rules. Set them aside. <span class="n" id="count-after-pr">15</span> still have no proportional component.</p>
         </div>
 
         <div class="card" data-step="5">
-          <p data-copy-id="BES.opening.card.presidency">Back across the comparison: of the 15 countries left, <span class="n" id="count-pres-next">9</span> directly elect a president. The office's power varies, but its mandate comes from voters, not parliament. <span class="n" id="count-after-pres">6</span> remain.</p>
+          <p data-copy-id="BES.opening.card.peru">Take Peru. Its <span class="n">130</span> deputies are elected proportionally across <span class="n">27</span> districts. Voters choose a party list and may name preferred candidates; seats are divided among lists rather than handed to one district winner.</p>
         </div>
 
         <div class="card" data-step="6">
-          <p data-copy-id="BES.opening.card.ghana">Ghana shows what that separation means. Its MPs are elected one per constituency by FPTP. Voters separately choose the executive president nationwide; a winner needs more than <span class="n">50%</span>, or the top two face a runoff.</p>
+          <p data-copy-id="BES.opening.card.presidency">Back across the comparison: of the 15 countries left, <span class="n" id="count-pres-next">9</span> directly elect a president. The office's power varies, but its mandate comes from voters, not parliament. <span class="n" id="count-after-pres">6</span> remain.</p>
         </div>
 
         <div class="card" data-step="7">
-          <p data-copy-id="BES.opening.card.second-chamber">Six countries remain without proportional lower-house seats or a directly elected president. <span class="n" id="count-second-next">5</span> have a second chamber, where legislation can be revised, delayed or stopped. <span class="n" id="count-after-second">1</span> remains.</p>
+          <p data-copy-id="BES.opening.card.ghana">Ghana shows what that separation means. Its MPs are elected one per constituency by FPTP. Voters separately choose the executive president nationwide; a winner needs more than <span class="n">50%</span>, or the top two face a runoff.</p>
         </div>
 
         <div class="card" data-step="8">
-          <p data-copy-id="BES.opening.card.australia">Take Australia. Every state elects <span class="n">12</span> senators regardless of population; each mainland territory elects two. All bills need both houses, and the Senate can amend or reject most legislation—and refuse any bill.</p>
+          <p data-copy-id="BES.opening.card.second-chamber">Six countries remain without proportional lower-house seats or a directly elected president. <span class="n" id="count-second-next">5</span> have a second chamber, where legislation can be revised, delayed or stopped. <span class="n" id="count-after-second">1</span> remains.</p>
         </div>
 
         <div class="card" data-step="9">
+          <p data-copy-id="BES.opening.card.australia">Take Australia. Every state elects <span class="n">12</span> senators regardless of population; each mainland territory elects two. All bills need both houses, and the Senate can amend or reject most legislation—and refuse any bill.</p>
+        </div>
+
+        <div class="card" data-step="10">
           <p data-copy-id="BES.opening.card.bangladesh">Across the full comparison, <span class="n" id="count-any">46</span> have at least one of these arrangements. The last is Bangladesh: its general seats use FPTP, its president is not separately elected and it has no second chamber. <span class="n">Zero of three.</span></p>
         </div>
 
-        <div class="card card--matrix" data-step="10">
+        <div class="card card--matrix" data-step="11">
           <p data-copy-id="BES.opening.card.matrix">The matrix restores the overlaps: a country may have more than one safeguard. In this 47-country comparison, Bangladesh alone has three NOs.</p>
         </div>
       </div>
@@ -442,12 +430,18 @@
   <!-- ===================== ARTICLE BODY ===================== -->
   <div class="article">
   <article class="body" aria-labelledby="story-title">
-    <p class="standfirst" data-copy-id="BES.story.standfirst">Bangladesh is debating a second chamber elected by proportional representation. It could become a counterweight to the lower-house majority — or a copy of it. The ballot, district, formula and decision rule decide which.</p>
-    <p data-copy-id="BES.story.intro.models">The July Charter proposes a bicameral parliament with an upper house elected through proportional representation. But the dispute contains two different models: use each party’s lower-house vote share to compose the upper house, or use the share of seats it won below — the model set out in the BNP’s note of dissent and manifesto. The supplied division file simulates the first. To illustrate the second below, we use the EC-declared party-held general seats.</p>
+    <p class="standfirst" data-copy-id="BES.story.standfirst">Bangladesh’s proposed PR-based upper house is meant to stop an FPTP landslide from making one party all-powerful. But the ballot, allocation formula and constitutional voting rule will decide whether it checks the majority or reproduces it.</p>
 
-    <h2 data-copy-id="BES.story.denominator.heading">The majority appears before the formula</h2>
-    <p data-copy-id="BES.story.denominator.exclusion">The supplied simulation starts with lower-house votes and excludes independent and rebel candidates because it models the upper house as a contest among party lists. That exclusion is one of the model’s most important limitations: those candidates drew more votes collectively than any party except BNP and Jamaat.</p>
-    <p data-copy-id="BES.story.denominator.effect">In the supplied 2026 division totals, the excluded votes total <strong>4,339,706</strong>, or <strong>5.79 per cent</strong> of all valid votes. Once they are removed from the denominator, BNP moves from just below half of all valid votes to a majority of the votes admitted to the model.</p>
+    <p data-copy-id="BES.story.history.constitution">Bangladesh’s Constitution is among the world’s easiest to amend: a two-thirds majority in Parliament is enough. In the 1990s, that threshold appeared to work as a safeguard. No party controlled two-thirds, and both constitutional amendments passed during the decade emerged from political consensus.</p>
+    <p data-copy-id="BES.story.history.2001">The arrangement weakened once first-past-the-post began turning modest vote advantages into landslide seat shares. In 2001, BNP and Awami League each won around 40 per cent of the popular vote, yet BNP took 193 seats against Awami League’s 62. BNP then used its supermajority to pass the 14th Amendment, helping set off the political crisis that ended in democratic breakdown.</p>
+    <p data-copy-id="BES.story.history.2008">Awami League repeated the pattern after 2008. BNP retained roughly 30 per cent of the vote but only about 10 per cent of the seats. The resulting two-thirds majority allowed Awami League to pass the 15th Amendment without needing opposition support.</p>
+
+    <p data-copy-id="BES.story.deadlock.charter">FPTP therefore gives winning parties leverage well beyond their popular vote. The July Charter 2025 proposed a PR-based upper house to interrupt that cycle. BNP’s note of dissent offered a different design: compose the upper house from parties’ lower-house seat shares, carrying the FPTP result upstairs.</p>
+    <p data-copy-id="BES.story.deadlock.mandates">The Charter says a party may implement a position recorded in a note of dissent if it puts that position in its manifesto and wins a mandate. But question one of the July 2026 referendum asked voters directly about a PR-based upper house, and more than 70 per cent voted yes. The result leaves competing claims: BNP points to its electoral mandate, while the opposition points to the referendum’s direct mandate.</p>
+
+    <h2 data-copy-id="BES.story.formula.heading">A technical choice could reshape political alliances</h2>
+    <p data-copy-id="BES.story.formula.problem">Creating a PR-based upper house is not enough. The supplied analysis tests eight formulas for converting votes into seats. Hare quota is the most proportional of the valid outcomes retained here; D’Hondt is the least. The choice creates different incentives for the largest parties and for their smaller allies and rivals.</p>
+    <p data-copy-id="BES.story.formula.method">For the simulation, we divided Bangladesh into eight divisional districts and allocated the 100 upper-house seats among them by registered voters. We then removed votes cast for independent and rebel candidates from the party-only pool and applied each formula within every division. Those exclusions are a modelling choice, not an unavoidable feature of proportional representation.</p>
 
     <figure class="prviz-figure prviz-wide" id="vote-denominator">
       <div class="prviz-head">
@@ -470,9 +464,10 @@
       <figcaption class="prviz-caption" data-copy-id="BES.figure.vote.caption">Source: supplied 2026 results by division; Netra calculation. Independent and rebel votes are excluded from the model.</figcaption>
     </figure>
 
-    <h2 data-copy-id="BES.story.allocation.heading">Setting the rules decides who benefits</h2>
-    <p data-copy-id="BES.story.allocation.charter-vs-bnp">The July Charter promises a 100-seat upper house proportional to parties’ national lower-house votes. BNP’s note of dissent instead proposes carrying lower-house seat shares upstairs. Neither position settles the allocation formula, treatment of independent votes or geographic design — so neither produces a unique chamber on its own.</p>
-    <p data-copy-id="BES.story.allocation.frame-guide">The first frame below illustrates BNP’s seat-share model using party-held general seats. The next two hold the party-vote pool, eight divisional seat magnitudes and 100-seat total constant, changing only the allocation formula.</p>
+    <p data-copy-id="BES.story.formula.denominator">The first decision changes the balance before any formula is applied. Independent and rebel candidates received 4,339,706 votes — 5.79 per cent of all valid votes and the third-largest vote bloc. Removing them raises BNP’s share from 49.97 per cent of all valid votes to 53.04 per cent of the party-only pool.</p>
+    <p data-copy-id="BES.story.formula.results">The formula then changes who gets represented. Hare quota gives seats to seven parties, with BNP on 54 and Jamaat on 35. D’Hondt gives BNP 61 and Jamaat 36, while only five parties remain. Islamic Front and Khelafat Majlis disappear; NCP, IAB and BKM are each reduced.</p>
+    <p data-copy-id="BES.story.formula.bargaining">That creates a possible bargaining equilibrium. Hare is more representative but less advantageous to the two largest parties. D’Hondt benefits BNP most and could also appeal to Jamaat by weakening smaller Islamist rivals and reducing NCP’s representation. Negotiations over the formula may therefore separate large parties from smaller allies while favouring the ruling party.</p>
+    <p data-copy-id="BES.story.formula.frame-guide">The first frame below illustrates BNP’s proposal to carry lower-house party-seat shares upstairs. The next two keep the party-vote pool, eight divisional seat totals and 100-seat chamber fixed, changing only the allocation formula.</p>
 
     <figure class="prviz-figure prviz-wide prviz-allocation-scrolly" id="prviz-allocation-scrolly" aria-labelledby="prviz-allocation-title">
       <div class="prviz-allocation-stage">
@@ -518,18 +513,20 @@
       <figcaption class="prviz-caption" data-copy-id="BES.figure.allocation.caption">Sources: <a href="https://www.ecs.gov.bd/files/oCo9rPBkcdilk9WlZFnYlcFALB8UDYtuYaCRFh4Q.pdf">Election Commission referendum circular</a>; <a href="https://www.bssnews.net/national-parlament-election-2026/360856">EC-declared general-seat results reported by BSS</a>; supplied 2026 division results; Netra calculations. The BNP seat-share frame is illustrative: party-held seats only, smaller one-seat parties grouped and Hare largest-remainder rounding. Boundary: <a href="https://www.geoboundaries.org/">geoBoundaries gbOpen</a>, BGD ADM1 (CC BY 4.0).</figcaption>
     </figure>
 
-    <h2 data-copy-id="BES.story.geography.heading">Geography is another electoral rule</h2>
-    <p data-copy-id="BES.story.geography.design">Much of the discussion treats Bangladesh as one national electoral district. The original analysis instead assigns the 100 seats to divisions by registered voters — six to Barishal, seven to Sylhet, 24 to Dhaka and between eight and 20 elsewhere — to preserve a geographic link. But those smaller district magnitudes also make it harder for smaller parties to win a seat.</p>
-    <p data-copy-id="BES.story.geography.results">In one national district, Hare would seat 10 parties and give BNP 53 seats; divided eight ways, it seats seven parties and gives BNP 54. National D’Hondt gives BNP 56 seats; division-by-division D’Hondt gives it 61.</p>
+    <p data-copy-id="BES.story.formula.fragmentation">The incentives may extend beyond the initial bargaining. A proportional contest can make running alone more viable for smaller parties, reducing pressure to consolidate against a dominant party. The experiences of Japan’s LDP and Turkey’s AKP are not mechanically identical to Bangladesh’s proposal, but they illustrate the risk the authors identify: durable small parties can coexist with a fragmented opposition and long periods of dominant-party rule.</p>
 
-    <h2 data-copy-id="BES.story.scrutiny.heading">The rules still need scrutiny</h2>
-    <p data-copy-id="BES.story.scrutiny.intro">The problem is not proportional representation itself. It is that every unresolved rule changes who is represented, who benefits, or how much power the largest party can exercise: which votes count, whether seats are allocated nationally or by division, which formula converts votes into seats, and what decisions require more than a simple majority.</p>
+    <h2 data-copy-id="BES.story.ballot.heading">A separate ballot is the first deterrent</h2>
+    <p data-copy-id="BES.story.ballot.design">One way to reduce these distortions is to give each voter two ballots: one constituency vote under FPTP for the lower house, and one party-list vote for the upper house. The second ballot would measure the voter’s party preference directly instead of inferring it from a different contest.</p>
+    <p data-copy-id="BES.story.ballot.independents">That would prevent independent-candidate votes from simply disappearing from the upper-house denominator. The 4.34 million voters who backed independent and rebel candidates in 2026 could still choose a party for the upper chamber, rather than having their lower-house choice excluded from the calculation.</p>
+    <p data-copy-id="BES.story.ballot.strategy">It would also clarify party strategy. If one lower-house ballot determined representation in both chambers, parties could nominate candidates partly to accumulate upper-house votes even where they could not win the constituency. That could fragment the lower-house vote — the vote that decides who forms the government.</p>
 
-    <p data-copy-id="BES.story.scrutiny.votes"><strong>First, lawmakers must decide which votes count.</strong> A vote-based model can reuse lower-house constituency totals or ask voters for a separate upper-house party-list vote. Reusing the lower-house result excludes independent candidates from a party-only allocation and may not measure the same preference.</p>
-    <p data-copy-id="BES.story.scrutiny.geography"><strong>They must also decide how geography enters the allocation.</strong> A national district is more proportional in this simulation but may concentrate nominees, while division lists preserve a regional link but make it harder for smaller parties to win seats. A national levelling tier could reconcile the two goals.</p>
-    <p data-copy-id="BES.story.scrutiny.formula"><strong>Finally, the formula and decision rule must be set before the election.</strong> Hare and D’Hondt produce different representation from the same votes; the chamber’s voting requirement then determines whether the largest party can act alone.</p>
+    <h2 data-copy-id="BES.story.amendment.heading">The upper house should have a say in constitutional amendments</h2>
+    <p data-copy-id="BES.story.amendment.positions">The July Charter proposes that a constitutional amendment should also pass by a simple majority in the upper house. BNP argues that the upper house should have no role in constitutional amendments. We think both positions are wrong.</p>
+    <p data-copy-id="BES.story.amendment.threshold">The lower house has 350 members and the proposed upper house 100. A constitutional amendment currently needs 234 votes below; a simple-majority rule would require only 51 votes above. That would give a much smaller chamber equal gatekeeping power at a far lower numerical threshold. Requiring two-thirds in both houses — 234 votes in the lower house and 67 in the upper — would make constitutional change depend on broader political agreement.</p>
+    <p data-copy-id="BES.story.amendment.article70">BNP’s objection is that upper-house members would not be directly elected. But Article 70 prevents MPs from voting against their party on motions covered by party discipline. The July Charter would relax the article in some areas while retaining it for constitutional amendments. On that question, even directly elected lower-house MPs would still be voting as party blocs rather than as autonomous representatives.</p>
+    <p data-copy-id="BES.story.amendment.party-support">A separately elected PR upper house could also reveal support for parties more directly. A voter may choose a constituency candidate for personal competence while disliking that candidate’s party; after the election, Article 70 transfers much of the member’s voting autonomy back to the party. A separate party-list ballot would make the upper house a clearer measure of the support each party actually commands.</p>
 
-    <p data-copy-id="BES.story.scrutiny.conclusion">The debate is therefore not simply PR or no PR. Setting the rules at the beginning will determine whose votes count, which parties gain representation and whether the second chamber becomes a counterweight or a mirror.</p>
+    <p data-copy-id="BES.story.conclusion">Adopting a PR-based upper house is not enough by itself to protect the Constitution or represent voters fairly. The ballot, district design, allocation formula and amendment threshold will determine whether the new chamber becomes a genuine check or another route to concentrated power. Those rules require more public debate before the system is fixed.</p>
 
     <section class="methodology" aria-labelledby="methodology-title">
       <h3 id="methodology-title" data-copy-id="BES.methodology.heading">Methodology</h3>
@@ -602,6 +599,7 @@
 
   const STEPS = [
     {kind:'fh',filters:0},
+    {kind:'comparison',filters:1},
     {kind:'comparison',filters:2},
     {kind:'sieve',filters:2,depth:-1},
     {kind:'sieve',filters:2,depth:0},
@@ -1210,17 +1208,9 @@
       el.classList.remove('is-hover-match','is-hover-off');
     });
 
-    let tally=null;
-    if(spec.kind==='comparison') tally=[stats.pool,'In the comparison'];
-    else if(spec.kind==='sieve'&&depth===-1) tally=[stats.pool,'Enter the sieve'];
-    else if(spec.kind==='sieve'&&depth===0) tally=[stats.afterPR,'Without PR'];
-    else if(spec.kind==='sieve'&&depth===1) tally=[stats.afterPres,'Still uncovered'];
-    else if(spec.kind==='sieve'&&depth===2) tally=[stats.afterSecond,'Still uncovered'];
-    else if(spec.kind==='reveal') tally=['0 / 3','Bangladesh'];
-    document.getElementById('tally').classList.toggle('is-visible',!!tally);
-    if(tally){
-      document.getElementById('tally-number').textContent=tally[0];
-      document.getElementById('tally-label').textContent=tally[1];
+    if(filterMode){
+      document.getElementById('legend-pool-count').textContent =
+        nFilters===1 ? stats.population : stats.pool;
     }
     document.getElementById('legend').style.opacity=1;
 
@@ -1351,17 +1341,25 @@
   function renderCounts(){
     const set=(id,n)=>{ const el=document.getElementById(id); if(el) el.textContent=n; };
     const buckets=[0,1,2,3].map(i=>state.pool.filter(d=>d.sieve_exit===i).length);
+    const population=state.data.filter(passPop).length;
     state.stats={
       pool:state.pool.length,
+      population,
+      tooSmall:state.data.length-population,
+      notFree:population-state.pool.length,
       any:state.pool.filter(d=>d.n_corr>0).length,
       buckets,
       afterPR:buckets[1]+buckets[2]+buckets[3],
       afterPres:buckets[2]+buckets[3],
       afterSecond:buckets[3]
     };
-    if(state.stats.pool!==47 || buckets.join(',')!=='32,9,5,1'){
+    if(state.stats.population!==82 || state.stats.tooSmall!==116 || state.stats.notFree!==35 ||
+        state.stats.pool!==47 || buckets.join(',')!=='32,9,5,1'){
       console.warn('Unexpected safeguard-sieve totals', state.stats);
     }
+    set('count-too-small',state.stats.tooSmall);
+    set('count-population',state.stats.population);
+    set('count-not-free',state.stats.notFree);
     set('count-pool',state.stats.pool);
     set('count-any',state.stats.any);
     set('count-pr',buckets[0]);

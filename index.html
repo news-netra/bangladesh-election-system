@@ -6,33 +6,29 @@
   <title data-copy-id="BES.meta.page-title">Bangladesh got the wrong kind of proportional representation — Netra News</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+  <link rel="stylesheet" href="https://use.typekit.net/ssq1axr.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" />
   <style>
-    @font-face{font-family:museo-sans;src:url(https://use.typekit.net/af/036a04/00000000000000007735da11/31/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n3&v=3) format("woff2");font-display:swap;font-style:normal;font-weight:300}
-    @font-face{font-family:museo-sans;src:url(https://use.typekit.net/af/2989c9/00000000000000007735da17/31/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n5&v=3) format("woff2");font-display:swap;font-style:normal;font-weight:500}
-    @font-face{font-family:museo-sans;src:url(https://use.typekit.net/af/69a3e8/00000000000000007735da1d/31/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n7&v=3) format("woff2");font-display:swap;font-style:normal;font-weight:700}
-    @font-face{font-family:utopia-std;src:url(https://use.typekit.net/af/4db8bf/00000000000000007735d61c/31/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n4&v=3) format("woff2");font-display:swap;font-style:normal;font-weight:400}
-    @font-face{font-family:utopia-std;src:url(https://use.typekit.net/af/4f35a4/00000000000000007735d633/31/l?primer=f592e0a4b9356877842506ce344308576437e4f677d7c9b78ca2162e6cad991a&fvd=n6&v=3) format("woff2");font-display:swap;font-style:normal;font-weight:600}
-
     :root{
       color-scheme:light;
       --bg:#ffffff; --bg-raised:#fff0f0; --ink:#1c1c1c; --body:#262626;
       --muted:#545454; --faint:#767676; --line:#262626; --card-bg:#fff4da;
       --accent:#e51503;
-      --free:#0064fa; --partly:#ffcd1e; --notfree:#800800;
-      --pr:#e51503; --pr-ink:#800800; --pres:#4f4fff; --pres-ink:#2800d7;
-      --second:#338736; --second-ink:#0e4e10; --bd:#131638; --bd-ink:#131638;
-      --has-any:#338736; --comparison:#4f4fff; --remainder:#545454;
-      --map-base:#efefef; --dark-fill:#767676; --unmapped:#f8f8f8;
+      --free:#3bac87; --partly:#b9a350; --notfree:#9869a0;
+      --pr:#3368A0; --pr-ink:#1e4570; --pres:#827148; --pres-ink:#5a4e32;
+      --second:#428475; --second-ink:#2a564c; --bd:#131638; --bd-ink:#131638;
+      --has-any:#338736; --comparison:#866657; --remainder:#66A3BF;
+      --map-base:#efefef; --dark-fill:#b8b8b8; --unmapped:#f8f8f8;
       --dim:#cccccc; --step-scroll:2.6;
       --paper:#ffffff; --paper-ink:#1c1c1c; --paper-body:#262626;
       --paper-muted:#545454; --paper-soft:#f2f7ff; --paper-rule:#cccccc;
-      --party-bnp:#2800d7; --party-jamaat:#0a8059; --party-ncp:#e51503;
-      --party-iab:#0064fa; --party-bkm:#c48600; --party-if:#3b5998;
+      --party-bnp:#3368A0; --party-jamaat:#428475; --party-ncp:#A05C52;
+      --party-iab:#0064fa; --party-bkm:#c48600; --party-if:#5C5A78;
       --party-km:#800800; --party-independent:#262626; --party-other:#999999;
-      --map-bnp:#c3cbff; --map-jamaat:#d1edc0; --no-majority:#ffe79b;
-      --font-display:"museo-sans",Arial,sans-serif;
-      --font-body:"utopia-std",Georgia,serif;
+      --map-bnp:#3368A0; --map-jamaat:#428475; --no-majority:#BFA28C;
+      --font-display:"neue-haas-grotesk-display",Arial,sans-serif;
+      --font-body:"calluna",Georgia,serif;
       --font-mono:"IBM Plex Mono",ui-monospace,monospace;
     }
 
@@ -43,16 +39,20 @@
     .viz-failed .scrolly{height:100vh!important}
     .viz-failed .card[data-step="0"]{visibility:visible!important;opacity:1!important;transform:translateY(-50%)!important}
     .viz-failed .cue,.viz-failed .progress{display:none}
+    .local-serve-note{position:fixed;top:0;left:0;right:0;z-index:20;padding:12px 18px;
+      background:#fff0f0;color:#800800;font:500 13px/1.45 var(--font-display);
+      border-bottom:1px solid #e51503}
+    .local-serve-note[hidden]{display:none}
     .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--bg)}
     #viz{position:absolute;inset:0;width:100%;height:100%}
     .vignette{position:absolute;inset:0;pointer-events:none;
-      background:linear-gradient(90deg,rgba(255,255,255,.94) 0,rgba(255,255,255,.38) 35%,transparent 60%),
-        linear-gradient(180deg,rgba(255,255,255,.22),transparent 20%,transparent 78%,rgba(255,255,255,.7));
+      background:linear-gradient(90deg,rgba(255,255,255,.55) 0,rgba(255,255,255,.16) 26%,transparent 34%),
+        linear-gradient(180deg,rgba(255,255,255,.12),transparent 16%,transparent 78%,rgba(255,255,255,.55));
       transition:opacity .45s ease}
     .vignette.is-clear{opacity:0}
-    .progress{position:absolute;top:0;left:0;height:6px;width:0;background:var(--accent);z-index:8}
+    .progress{position:absolute;top:0;left:0;height:6px;width:0;background:#66a3bf;z-index:8}
 
-    .cards{position:absolute;inset:0;z-index:6;pointer-events:none}
+    .cards{position:absolute;inset:0;z-index:8;pointer-events:none}
     .card{position:absolute;top:50%;left:clamp(28px,5.5vw,88px);
       width:min(470px,42vw);transform:translateY(-50%);will-change:transform,opacity;
       visibility:hidden;opacity:0;background:var(--card-bg);padding:27px 29px 30px}
@@ -67,16 +67,18 @@
     .cue svg{animation:bob 1.8s ease-in-out infinite}
     @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 
-    .legend{position:absolute;top:20px;right:clamp(20px,4vw,60px);left:auto;z-index:7;
-      display:flex;gap:12px;align-items:center;flex-wrap:wrap;max-width:min(720px,65vw);
-      padding:9px 0;background:rgba(255,255,255,.9);color:var(--muted);font:400 10.5px/1.35 var(--font-mono);
-      transition:opacity .45s ease}
-    .legend .cap-t{letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding-left:10px}
-    .legend .legend-set{display:flex;gap:13px;align-items:center;flex-wrap:wrap;padding-right:10px}
+    .legend{position:absolute;top:clamp(72px,11vh,110px);left:34%;right:18px;z-index:7;
+      display:flex;gap:16px;align-items:center;justify-content:center;
+      flex-wrap:wrap;max-width:none;padding:10px 16px;background:rgba(255,255,255,.9);
+      color:var(--muted);font:400 13px/1.35 var(--font-mono);transition:opacity .45s ease}
+    .legend .cap-t{letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+      font-size:12px;padding-left:4px}
+    .legend .legend-set{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-right:4px}
     .legend .legend-set[hidden]{display:none}
-    .legend .item{display:inline-flex;align-items:center;gap:6px;color:var(--body);transition:opacity .25s ease}
+    .legend .item{display:inline-flex;align-items:center;gap:7px;color:var(--body);transition:opacity .25s ease}
     .legend .item[hidden]{display:none}
-    .legend .swatch{width:10px;height:10px;display:inline-block;background:var(--map-base)}
+    .legend .swatch{width:13px;height:13px;min-width:13px;min-height:13px;flex:0 0 13px;
+      display:block;aspect-ratio:1;background:var(--map-base)}
     .legend .swatch.in-set{background:var(--comparison)}
     .legend .swatch.filtered{background:var(--dark-fill)}
     .legend .swatch.has-any{background:var(--has-any)}.legend .swatch.no-check{background:var(--bd)}
@@ -86,6 +88,12 @@
     .legend .safeguard-item{opacity:.82}.legend .safeguard-item.is-active{opacity:1}
     .legend .sieve-item.is-hover-match{opacity:1;color:var(--ink)}
     .legend .sieve-item.is-hover-off{opacity:.55}
+    .legend.is-matrix{right:auto;transform:none;flex-direction:column;align-items:flex-start;
+      justify-content:flex-start;gap:12px;max-width:190px;padding:0;background:transparent}
+    .legend.is-matrix .cap-t{padding-left:0}
+    .legend.is-matrix .legend-set{flex-direction:column;align-items:flex-start;gap:11px;padding-right:0}
+    .legend.is-matrix .item{align-items:flex-start}
+    .legend.is-matrix .swatch{border-radius:50%;margin-top:2px}
 
     #viz .unit{transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .55s ease}
     #viz .geo{transition:opacity .75s ease}
@@ -132,7 +140,7 @@
     .story-head.is-preparing.is-visible .story-head-inner{opacity:1;transform:translateY(0)}
     .story-category{margin:0 0 25px;color:var(--bd-ink);font:500 11px/1.2 var(--font-mono);
       letter-spacing:.16em;text-transform:uppercase}
-    .story-title{max-width:1040px;margin:0;color:var(--ink);font:600 clamp(44px,6.4vw,84px)/1.025 var(--font-body);
+    .story-title{max-width:1040px;margin:0;color:var(--ink);font:600 clamp(44px,6.4vw,84px)/1.025 var(--font-display);
       letter-spacing:-.045em;text-wrap:balance}
     .story-byline{margin:36px 0 0;color:var(--body);font:500 14px/1.45 var(--font-display);
       letter-spacing:.005em}
@@ -141,7 +149,7 @@
     .body{max-width:680px;margin:0 auto;padding:96px 22px 120px}
     .body .standfirst{font:400 22px/1.52 var(--font-body);color:var(--paper-ink);margin:0 0 64px;
       padding:0;text-wrap:pretty}
-    .body h2{font:600 clamp(29px,3.7vw,37px)/1.12 var(--font-body);letter-spacing:-.026em;
+    .body h2{font:600 clamp(29px,3.7vw,37px)/1.12 var(--font-display);letter-spacing:-.026em;
       margin:64px 0 16px;color:var(--paper-ink);text-wrap:balance}
     .body h3{font:600 12px/1.3 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;
       margin:56px 0 12px;color:var(--paper-muted)}
@@ -171,7 +179,7 @@
     .prviz-wide .prviz-head{margin-left:110px}
     .prviz-eyebrow{margin:0 0 9px;color:var(--party-bnp);font:500 11px/1.3 var(--font-mono);
       letter-spacing:.13em;text-transform:uppercase}
-    .body .prviz-title{margin:0;color:var(--paper-ink);font:600 clamp(26px,3.2vw,34px)/1.13 var(--font-body);
+    .body .prviz-title{margin:0;color:var(--paper-ink);font:600 clamp(26px,3.2vw,34px)/1.13 var(--font-display);
       letter-spacing:-.025em;text-transform:none;text-wrap:balance}
     .body .prviz-deck{max-width:650px;margin:10px 0 0;color:var(--paper-muted);
       font:300 16px/1.48 var(--font-display)}
@@ -217,6 +225,7 @@
     .prviz-allocation-bar{position:relative;min-height:126px;width:100%}
     .prviz-allocation-bar svg{display:block;width:100%;overflow:visible}
     .prviz-allocation-bar text{font-family:var(--font-mono);fill:var(--paper-ink)}
+    .prviz-allocation-values text{fill:#fff}
     .prviz-allocation-summary{margin:4px 0 10px!important;color:var(--paper-ink)!important;
       font:500 14px/1.4 var(--font-display)!important}
     .prviz-allocation-map-wrap{position:relative}
@@ -276,8 +285,9 @@
       .card--matrix{top:20%}
       .card p{font-size:clamp(19px,5.25vw,23px);line-height:1.37}
       .card--matrix p{font-size:18px}
-      .legend{top:10px;left:12px;right:12px;max-width:none;gap:9px;font-size:9px;padding:7px 0}
-      .legend .legend-set{gap:9px}.legend .swatch{width:8px;height:8px}.legend .cap-t{font-size:8.5px}
+      .legend{top:18px;left:50%;right:auto;transform:translateX(-50%);max-width:calc(100vw - 24px);
+        gap:12px;font-size:11.5px;padding:8px 12px}
+      .legend .legend-set{gap:11px}.legend .swatch{width:11px;height:11px}.legend .cap-t{font-size:10.5px}
       .cue{left:16px;bottom:12px}.tooltip{width:220px}
     }
     @media (max-height:650px){
@@ -301,6 +311,11 @@
   </style></noscript>
 </head>
 <body>
+  <div id="local-serve-note" class="local-serve-note" hidden role="alert">
+    Maps and charts cannot load from a file:// URL. In this folder run
+    <code>python3 -m http.server 8080</code> and open
+    <a href="http://localhost:8080">http://localhost:8080</a>.
+  </div>
 
   <section class="scrolly" id="scrolly" aria-label="How Bangladesh becomes an electoral outlier">
     <div class="stage" id="stage">
@@ -553,11 +568,20 @@
   </article>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" onerror="document.documentElement.classList.add('viz-failed')"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+  <script src="vendor/d3.min.js" onerror="document.documentElement.classList.add('viz-failed')"></script>
+  <script src="vendor/topojson-client.min.js"></script>
 <script>
 (function(){
   "use strict";
+  if(location.protocol==='file:'){
+    const note=document.getElementById('local-serve-note');
+    if(note) note.hidden=false;
+  }
+  if(!window.d3){
+    document.documentElement.classList.add('viz-failed');
+    console.error('D3 failed to load from vendor/d3.min.js');
+    return;
+  }
 
   // ---------- editorial pacing ----------
   // Each paragraph rises into place, holds, then travels fully upward. A blank
@@ -702,7 +726,7 @@
     return NAME_ALIAS[key] || key;
   }
 
-  const worldURL='https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json';
+  const worldURL='vendor/countries-50m.json';
   Promise.all([
     d3.csv('election_systems.csv', d3.autoType),
     d3.json(worldURL).catch(()=>null)
@@ -786,7 +810,7 @@
       narrow?Math.max(220,h*0.29,cardBottom+42):72;
     const bottom=short?14:narrow?18:44;
     const rowH=Math.min(15,(h-top-bottom)/rowsPerBlock);
-    const leftBound=w>=900?w*0.42:14;
+    const leftBound=w>=900?w*0.42+196:14;
     const rightBound=w-22;
     const available=Math.max(280,rightBound-leftBound);
     const gap=blockCount>1?(narrow?12:22):0;
@@ -1212,7 +1236,19 @@
       document.getElementById('legend-pool-count').textContent =
         nFilters===1 ? stats.population : stats.pool;
     }
-    document.getElementById('legend').style.opacity=1;
+    const legendEl=document.getElementById('legend');
+    const hideLegend=spec.kind==='example';
+    const matrixLegend=isFinal&&state.W>=900&&state.mx;
+    legendEl.hidden=hideLegend;
+    legendEl.style.opacity=hideLegend?0:1;
+    legendEl.classList.toggle('is-matrix',!!matrixLegend);
+    if(matrixLegend){
+      legendEl.style.left=Math.max(16,state.mx.x0-196)+'px';
+      legendEl.style.top=Math.max(24,state.mx.y0-28)+'px';
+    } else {
+      legendEl.style.left='';
+      legendEl.style.top='';
+    }
 
     if(mapPhase && focused && focused.matches && focused.matches('#viz .geo path')){
       const f=d3.select(focused).datum();
@@ -1376,6 +1412,7 @@
 <script>
 (function(){
   "use strict";
+  if(!window.d3) return;
 
   const partyOrder=['BNP','Jamaat','NCP','IAB','BKM','Islamic Front','Khelafat Majlis','Other parties'];
   const partyColors={
@@ -1621,9 +1658,9 @@
       valueLayer.selectAll('text').data(labels,segment=>segment.party).join(
         enter=>enter.append('text').attr('x',segment=>x(segment.start+segment.seats/2))
           .attr('y',barY+barH/2+4).attr('font-size',11).attr('font-weight',500)
-          .attr('text-anchor','middle').attr('fill','var(--paper)').text(segment=>segment.seats),
+          .attr('text-anchor','middle').attr('fill','#fff').text(segment=>segment.seats),
         update=>update.call(selection=>selection.transition(transition)
-          .attr('x',segment=>x(segment.start+segment.seats/2))).text(segment=>segment.seats),
+          .attr('x',segment=>x(segment.start+segment.seats/2)).attr('fill','#fff')).text(segment=>segment.seats),
         exit=>exit.remove()
       );
 
